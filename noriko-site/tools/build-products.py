@@ -23,7 +23,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "29"
+CSS_V = "28"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -179,7 +179,7 @@ def head(p):
       <a href="../retail.html#drink">Drink</a>
       <a href="../index.html#horeca">HoReCa</a>
       <a href="../index.html#inspiration">How to use</a>
-      <a href="../index.html#about">About</a>
+      <a href="../about.html">About</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
   </div>
@@ -552,7 +552,6 @@ TAIL = """
           <li><a href="../retail.html#snack">Snack</a></li>
           <li><a href="../retail.html#drink">Drink · JUZO</a></li>
           <li><a href="../retail.html#where">Where to buy</a></li>
-          <li><a class="ext" href="https://drinkjuzo.com/?utm_source=noriko&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">drinkjuzo.com<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
         </ul>
       </div>
       <div>
@@ -566,7 +565,7 @@ TAIL = """
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="../index.html#about">About NORIKO</a></li>
+          <li><a href="../about.html">About NORIKO</a></li>
           <li><a href="../index.html#inspiration">How to use</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>

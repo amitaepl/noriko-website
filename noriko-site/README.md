@@ -22,7 +22,7 @@ python -m http.server 5177
 Then open <http://localhost:5177>.
 
 > **If you edit the CSS and see no change, hard-refresh (Ctrl+F5 / Cmd+Shift+R).**
-> The stylesheet link carries a `?v=` cache-buster (currently `v=29`) — bump that number when you change
+> The stylesheet link carries a `?v=` cache-buster (currently `v=28`) — bump that number when you change
 > `noriko.css` and the browser will always pick up the new file.
 
 ---
@@ -129,8 +129,8 @@ be funnelled through the same journey. Keep it visible on every page.
 
 **Pack → food.** Hover or keyboard-focus the Cook feature or any Cook product card and
 the packshot crossfades to what it becomes. This is NORIKO's signature interaction.
-**All 32 Cook products now have an image**; the 13 Snack products still show
-labelled placeholders. The images in use are AI-generated brand artwork, not
+**28 of the 32 Cook products now have an image**; the rest, and all 13 Snack products,
+still show labelled placeholders. The images in use are AI-generated brand artwork, not
 photography — they are captioned "Serving suggestion" and their provenance is recorded.
 **The second image must show genuine usage of that specific product**, never another
 packshot.
@@ -184,9 +184,9 @@ image's intrinsic size. It shipped a 666px image inside a 157px card here. Use
    **28 AI-generated brand images** are in use across Cook, captioned "Serving
    suggestion" with their provenance recorded, driving the pack→dish hover.
    Still wanted:
-   - Images for **all 13 Snack products** — Cook is now complete at 32/32
-   - **Eight re-rendered without the NORIKO logo** — they currently put NORIKO
-     branding over Green Label, Gold, JINJIN and unbranded packs
+   - Images for the last 4 Cook SKUs and **all 13 Snack products**
+   - **Seven re-rendered without the NORIKO logo** — they currently put NORIKO
+     branding over Green Label, JINJIN and unbranded packs
    - Genuine photography of the dish alone, which would replace all of these
    See `assets/img/dishes/README.md` for the spec and the full filename list.
 2. **Back-of-pack artwork for 25 of the 30 retail SKUs** — only the five Weilong

@@ -127,32 +127,7 @@ than any substitute text. Obtaining these labels is now a launch requirement.
 
 ---
 
-## DRINK / JUZO — brief, packshots, and drinkjuzo.com
-
-**JUZO has its own live site: <https://drinkjuzo.com>** (single page, checked
-28 Aug 2026). It is now a published source, so the facts below are no longer
-"from the brief only" — the site states ₹90, 280 ml and the same six flavours,
-matching this document exactly. No contradictions.
-
-**Facts it adds:** "wide straw included" in every pack · "more popping boba in
-every cup" · the on-site sequence Open → Sip → Pop. It also uses
-"See it. Sip it. Pop it." as its hero line, the same territory chosen here, and
-spells the brand plain **JUZO** in running text — consistent with the rule below.
-
-**How the two sites relate.** drinkjuzo.com owns the JUZO brand story in depth;
-this site keeps a short gateway section per world and links out. Decided
-28 Aug 2026: cross-link only, both domains kept. Outbound links carry
-`utm_source=noriko` so JUZO can see referred traffic. JUZO trade enquiries
-raised from this site use a tagged mailto subject ("via noriko site" / "via
-noriko retail hub") so the two funnels stay distinguishable.
-
-**⚠ Not yet done — the return links.** drinkjuzo.com currently has **no outbound
-links at all**. Its footer says "from the house of NORIKO" and offers "Read our
-story", neither of which links here. Until that is added the connection is
-one-way. Needed on drinkjuzo.com: a link from the NORIKO mention and from "Read
-our story" to this site, ideally with `utm_source=juzo`.
-
-### From the brief
+## DRINK / JUZO — from the brief only
 
 | Fact | Value |
 |---|---|
@@ -264,15 +239,11 @@ Converted to WebP at 1800px-wide max, 3:2, via `tools/import-dish-images.py` —
 2.1–3 MB PNGs down to roughly 150–330 KB each. Originals kept outside the repo
 in `NORIKO WEBSITE/food images/`.
 
-**Coverage: all 32 Cook SKUs.** **None of the 13 Snack products has one.**
+**Coverage: 28 of 32 Cook SKUs.** Still without an image: Dried Shiitake
+Mushroom, Nori Sheet (10 sheets), Nori Sheet (50 sheets), Rice Vinegar (1.8 L).
+**None of the 13 Snack products has one.**
 
-**Nori Sheet 10 and 50 share one image**, supplied that way by the brand owner.
-The pack in frame states "Net Contents 50 sheets", so on the 10-sheet product
-page the hover shows a 50-sheet pack. The alt text there names what is actually
-shown rather than implying a 10-sheet pack, and `dish_note` records it. A
-10-sheet frame would remove the discrepancy.
-
-### ⚠ Eight images put NORIKO branding on a pack that is not NORIKO
+### ⚠ Seven images put NORIKO branding on a pack that is not NORIKO
 
 The brand-ownership rule is satisfied on the *page* — each of these products is
 labelled with its real brand on the card, in the hero, in the fact list, in the
@@ -288,10 +259,9 @@ logo above another brand's pack:
 | Pickled radish with takuan maki | Sushi Takuan | unbranded |
 | Salted black beans | 原油豆豉 | Yangjiang Yuesheng |
 | Hondashi | かつおだし | JINJIN |
-| Nori sheets with sushi rolls | 焼のり, **Gold** | Gold |
 
 So a visitor reads *"This is not a NORIKO product"* beside an image showing the
-NORIKO logo. **These eight should be re-rendered without the NORIKO lockup.**
+NORIKO logo. **These seven should be re-rendered without the NORIKO lockup.**
 Four other non-NORIKO images — SUZUKA mayonnaise, HOT wasabi powder,
 Zhaofenghe bean paste, Jianhua sesame oil — are already correct and carry no
 NORIKO branding, which is the pattern to follow.

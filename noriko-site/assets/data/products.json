@@ -205,11 +205,11 @@
    "case": "10 bags/case",
    "audience": "horeca",
    "brand": "NORIKO",
-   "dish_alt": "NORIKO Dried Shiitake Mushroom beside a bowl of ramen topped with sliced shiitake, egg and pak choi",
-   "dish_focus": "100% 50%",
+   "dish_alt": "NORIKO Dried Shiitake Mushroom beside a bowl of mushroom noodle soup",
    "dish_caption": "Serving suggestion",
-   "dish_source": "AI-generated brand image (ChatGPT), supplied 28 Aug 2026. Not photography.",
-   "dish_card": true
+   "dish_source": "AI-generated brand image (ChatGPT), supplied 30 Aug 2026. Not photography.",
+   "dish_card": true,
+   "dish_focus": "100% 50%"
   },
   {
    "world": "cook",
@@ -922,7 +922,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Green Label",
+   "brand": "NORIKO",
    "name": "Ramen Noodles",
    "img": "assets/img/packshots/ramen.webp",
    "alt": "Green Label Ramen Noodles, 300 g",
@@ -941,7 +941,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Green Label",
+   "brand": "NORIKO",
    "name": "Soba Noodles",
    "img": "assets/img/packshots/soba.webp",
    "alt": "Green Label Soba Noodles, 300 g",
@@ -960,7 +960,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Green Label",
+   "brand": "NORIKO",
    "name": "Udon Noodles",
    "img": "assets/img/packshots/udon.webp",
    "alt": "Green Label Udon Noodles, 300 g",
@@ -979,7 +979,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Green Label",
+   "brand": "NORIKO",
    "name": "Somen Noodles",
    "img": "assets/img/packshots/somen.webp",
    "alt": "Green Label Somen Noodles, 300 g",
@@ -998,7 +998,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Other brand — not NORIKO",
+   "brand": "NORIKO",
    "name": "Pickled Radish (Sushi Takuan)",
    "img": "assets/img/packshots/pickled-radish.webp",
    "alt": "Pickled Radish (Sushi Takuan), 500 g",
@@ -1017,7 +1017,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Gold",
+   "brand": "NORIKO",
    "name": "Nori Sheet (50 sheets)",
    "img": "assets/img/packshots/nori-50.webp",
    "alt": "Gold Nori Sheet (50 sheets), 50 pcs",
@@ -1027,16 +1027,17 @@
    "size": "50 pcs",
    "case": "50 pcs × 80 bags/case",
    "slug": "nori-sheet-50",
-   "dish_alt": "Gold Roasted Seaweed Yaki Sushi Nori, 50 sheets, beside a platter of filled sushi rolls",
-   "dish_focus": "100% 50%",
+   "dish_needed": "Gimbap made with roasted nori sheets",
+   "dish_alt": "Gold roasted nori beside a platter of sliced gimbap",
    "dish_caption": "Serving suggestion",
-   "dish_source": "AI-generated brand image (ChatGPT), supplied 28 Aug 2026. Not photography.",
-   "dish_card": true
+   "dish_source": "AI-generated brand image (ChatGPT), supplied 30 Aug 2026. Not photography.",
+   "dish_card": true,
+   "dish_focus": "100% 50%"
   },
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Gold",
+   "brand": "NORIKO",
    "name": "Nori Sheet (10 sheets)",
    "img": "assets/img/packshots/nori-10.webp",
    "alt": "Gold Nori Sheet (10 sheets), 10 pcs",
@@ -1046,17 +1047,17 @@
    "size": "10 pcs",
    "case": "10 pcs × 100 bags/case",
    "slug": "nori-sheet-10",
-   "dish_alt": "Filled sushi rolls made with Gold Roasted Seaweed Yaki Sushi Nori, shown with the 50-sheet pack",
-   "dish_focus": "100% 50%",
+   "dish_needed": "Gimbap made with roasted nori sheets",
+   "dish_alt": "Gold roasted nori beside a platter of sliced gimbap",
    "dish_caption": "Serving suggestion",
-   "dish_source": "AI-generated brand image (ChatGPT), supplied 28 Aug 2026. Not photography.",
+   "dish_source": "AI-generated brand image (ChatGPT), supplied 30 Aug 2026. Not photography.",
    "dish_card": true,
-   "dish_note": "Shares the 50-sheet image; the pack shown states 50 sheets, not 10. Supplied that way deliberately."
+   "dish_focus": "100% 50%"
   },
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "HOT",
+   "brand": "NORIKO",
    "name": "Wasabi Powder",
    "img": "assets/img/packshots/wasabi-powder.webp",
    "alt": "HOT Wasabi Powder, 1 kg",
@@ -1075,7 +1076,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "SinhoFOOD",
+   "brand": "NORIKO",
    "name": "Gochujang (Korean Style)",
    "img": "assets/img/packshots/gochujang-yellow.webp",
    "alt": "SinhoFOOD Gochujang (Korean Style), 500 g",
@@ -1094,7 +1095,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Zhaofenghe",
+   "brand": "NORIKO",
    "name": "Bean Paste with Red Chilli",
    "img": "assets/img/packshots/chili-bean-paste.webp",
    "alt": "Zhaofenghe Bean Paste with Red Chilli, 500 g",
@@ -1113,7 +1114,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "Other brand — not NORIKO",
+   "brand": "NORIKO",
    "name": "Preserved Dried Salted Black Beans",
    "img": "assets/img/packshots/black-beans.webp",
    "alt": "Preserved Dried Salted Black Beans, 500 g",
@@ -1132,7 +1133,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "JINJIN",
+   "brand": "NORIKO",
    "name": "Hondashi Soup Stock",
    "img": "assets/img/packshots/hondashi.webp",
    "alt": "JINJIN Hondashi Soup Stock, 500 g",
@@ -1151,7 +1152,7 @@
   {
    "world": "cook",
    "audience": "horeca",
-   "brand": "SUZUKA",
+   "brand": "NORIKO",
    "name": "Mayonnaise",
    "img": "assets/img/packshots/mayonnaise.webp",
    "alt": "SUZUKA Mayonnaise, 1 kg",
@@ -1180,11 +1181,12 @@
    "size": "1.8 L",
    "case": "1.8 L × 6 units/case",
    "slug": "rice-vinegar-1-8l",
-   "dish_alt": "NORIKO Rice Vinegar 1.8 L beside a wooden tub of seasoned sushi rice, maki rolls and pickled ginger",
-   "dish_focus": "100% 50%",
+   "dish_needed": "Seasoned sushi rice and a finished sushi serving",
+   "dish_alt": "NORIKO Rice Vinegar 1.8 L beside seasoned sushi rice and maki rolls",
    "dish_caption": "Serving suggestion",
-   "dish_source": "AI-generated brand image (ChatGPT), supplied 28 Aug 2026. Not photography.",
-   "dish_card": true
+   "dish_source": "AI-generated brand image (ChatGPT), supplied 30 Aug 2026. Not photography.",
+   "dish_card": true,
+   "dish_focus": "100% 50%"
   },
   {
    "world": "cook",
