@@ -181,5 +181,37 @@
     });
   }
 
+  /* ---- General contact form ----
+     Builds a clear, pre-addressed enquiry in the visitor's email app. */
+  var contactForm = document.getElementById('contact-form');
+  var contactStatus = document.getElementById('contact-form-status');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+      var data = new FormData(contactForm);
+      var interests = Array.from(contactForm.querySelector('[name="interest"]').selectedOptions)
+        .map(function (option) { return option.value; });
+      var lines = [
+        'Name: ' + data.get('name'),
+        'Firm name: ' + (data.get('firm') || 'Not provided'),
+        'City: ' + data.get('city'),
+        'State: ' + data.get('state'),
+        'Tel / mobile: ' + data.get('phone'),
+        'Email: ' + data.get('email'),
+        'Interested in: ' + interests.join(', '),
+        '',
+        'Message:',
+        data.get('message')
+      ];
+      var subject = 'NORIKO enquiry — ' + data.get('name');
+      if (contactStatus) contactStatus.textContent = 'Opening your email app…';
+      window.location.href = 'mailto:info@aepl.biz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    });
+  }
+
   render();
 })();

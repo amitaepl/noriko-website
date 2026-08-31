@@ -572,8 +572,8 @@ TAIL = """
       </div>
     </div>
     <div class="footer__base">
-      <span>A brand by Ashokasha Exim Pvt. Ltd. · 224, Lodha Supremus Tower II, Wagle Estate, Thane (W) 400604, Maharashtra, India</span>
-      <span>Enquiries <a href="tel:+918928227122" class="num">+91 89282 27122</a> · <a href="mailto:info@aepl.biz">info@aepl.biz</a></span>
+      <span>NORIKO India · Thane West 400604 · MH (INDIA)</span>
+      <span>Helpline <a href="tel:+918928227122" class="num">89282 27122</a> · <a href="mailto:info@aepl.biz">info@aepl.biz</a></span>
     </div>
   </div>
 </footer>
@@ -600,3 +600,4 @@ def build():
 
 if __name__ == "__main__":
     build()
+
