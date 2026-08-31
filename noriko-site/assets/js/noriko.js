@@ -19,6 +19,37 @@
      The hidden start state is opt-in via .js-reveal so that no-JS, an older
      browser, or an observer that never fires still shows all content. */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Crop the food illustration from each snack's own front packshot. */
+  var snackFoodFocus = {
+    'fish-spicy.webp': '50% 68%',
+    'fish-mala.webp': '50% 68%',
+    'fish-pepper.webp': '50% 68%',
+    'fish-sweet-sour.webp': '50% 68%',
+    'squid-spicy.webp': '50% 68%',
+    'fermented-tofu.webp': '50% 68%',
+    'lotus-root.webp': '50% 67%',
+    'tofu-block-spicy.webp': '50% 66%',
+    'tofu-curd-skewer-spicy.webp': '50% 61%',
+    'braised-tofu-stick-spicy.webp': '50% 60%',
+    'big-latiao.webp': '50% 70%',
+    'mini-latiao.webp': '50% 62%',
+    'kiss-burn.webp': '50% 67%',
+    'konjac-hot.webp': '50% 69%',
+    'konjac-sour.webp': '50% 69%'
+  };
+  document.querySelectorAll('.snack-card__media > img').forEach(function (pack) {
+    var cleanSrc = pack.getAttribute('src').split('?')[0];
+    var file = cleanSrc.substring(cleanSrc.lastIndexOf('/') + 1);
+    if (!snackFoodFocus[file]) return;
+    var food = pack.cloneNode(false);
+    food.className = 'snack-card__food';
+    food.alt = '';
+    food.setAttribute('aria-hidden', 'true');
+    food.style.setProperty('--food-focus', snackFoodFocus[file]);
+    pack.parentNode.appendChild(food);
+  });
+
   var items = document.querySelectorAll('.reveal');
   if (!reduce && 'IntersectionObserver' in window && items.length) {
     document.documentElement.classList.add('js-reveal');

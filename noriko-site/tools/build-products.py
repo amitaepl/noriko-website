@@ -23,7 +23,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "28"
+CSS_V = "31"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -424,7 +424,7 @@ def ingredients(p):
         </table>
       </div>
       <p class="note">Percent Recommended Dietary Allowance is based on a 2,000 kcal a day diet and is used for general nutrition advice; calorie needs may vary.</p>
-      <p class="note note--warn">{nnote}</p>
+      {nnote}
 
       <h3 class="pdp__sub">Warnings on the pack</h3>
       <ul class="warnings">
@@ -433,7 +433,10 @@ def ingredients(p):
     </div>
   </section>
 """.format(ing=p["ingredients"], allerg=allerg, servings=p["servings"],
-           ss=p["serving_size"], nrows=nrows, nnote=p["nutrition_note"], warns=warns)
+           ss=p["serving_size"], nrows=nrows,
+           nnote=('<p class="note note--warn">' + p["nutrition_note"] + '</p>')
+                 if p.get("nutrition_note") else "",
+           warns=warns)
 
 
 def related(p):
@@ -454,6 +457,13 @@ def related(p):
             # interaction. Focus reveals it too, so it is not hover-only.
             dish = ('\n            <img class="dish" src="../{src}" alt="{alt}" '
                     'width="{w}" height="{h}" loading="lazy"{style}>').format(**qd)
+        elif q["world"] == "snack":
+            # Snack hover previews use the actual food illustration printed on
+            # the corresponding front pack, enlarged to fill the card.
+            dish = ('\n            <img class="dish" src="../{img}" alt="" '
+                    'aria-hidden="true" width="{w}" height="{h}" loading="lazy" '
+                    'style="--dish-focus:50% 67%">').format(
+                        img=q["img"], w=q["w"], h=q["h"])
         elif q.get("dish_needed"):
             dish = ("""
             <span class="dish needs-photo" aria-hidden="true">
