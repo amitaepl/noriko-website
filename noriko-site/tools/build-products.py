@@ -78,8 +78,7 @@ AUDIENCE = {
         "label": "Retail",
         "crumb": ("../retail.html", "Retail"),
         "world_href": "../retail.html#",
-        "cta": ('<a class="btn btn--primary" href="../retail.html#where">Where to buy</a>\n'
-                '          <a class="btn btn--ghost" href="../index.html#horeca">Foodservice packs</a>'),
+        "cta": '<a class="btn btn--primary" href="../retail.html#where">Where to buy</a>',
     },
     "horeca": {
         "label": "HoReCa",
@@ -310,7 +309,7 @@ def factlist(p):
         rows.append(("Full name on pack", p["full_name"]))
     rows.append(("Net weight" if p["world"] == "snack" else "Pack size", p["size"]))
     if p.get("diet"):
-        rows.append(("Diet mark", "Veg (green)" if p["diet"] == "veg" else "Non-veg (brown)"))
+        rows.append(("Diet mark", "Veg" if p["diet"] == "veg" else "Non-veg"))
     if p.get("heat"):
         rows.append(("Heat rating printed on pack", p["heat"]))
     if p.get("ready_to_eat"):
@@ -425,7 +424,7 @@ def ingredients(p):
         </table>
       </div>
       <p class="note">Percent Recommended Dietary Allowance is based on a 2,000 kcal a day diet and is used for general nutrition advice; calorie needs may vary.</p>
-      <p class="note note--warn"><strong>To confirm.</strong> {nnote}</p>
+      <p class="note note--warn">{nnote}</p>
 
       <h3 class="pdp__sub">Warnings on the pack</h3>
       <ul class="warnings">

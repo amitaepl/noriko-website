@@ -1569,23 +1569,24 @@ p { margin: 0 0 var(--space-4); max-width: 64ch; }
 .about-principle p { color:rgba(255,255,255,.75); max-width:62ch; }
 .about-principle p + p { margin-top:var(--space-5); }
 
-.owner-story__grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-8); align-items:start; }
-.owner-story__grid > div:last-child { max-width:62ch; }
-.owner-story__mark { min-height:0; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg); position:relative; overflow:hidden; }
+.owner-story__grid { display:grid; grid-template-columns:1fr; gap:var(--space-8); max-width:1120px; }
+.owner-story__grid > div:last-child { width:100%; max-width:820px; margin-inline:auto; }
+.owner-story__mark { width:100%; min-height:0; aspect-ratio:16/7; display:flex; align-items:center; justify-content:center; background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg); position:relative; overflow:hidden; }
 .owner-story__mark img { width:100%; height:100%; object-fit:cover; transform:none; }
 .owner-story__journey { position:absolute; left:32px; right:32px; bottom:32px; display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:10px; }
 .owner-story__journey span { display:flex; flex-direction:column; min-width:0; }
 .owner-story__journey strong { font-family:var(--font-display); font-size:clamp(.82rem,1.2vw,1rem); line-height:1.1; color:var(--ink); }
 .owner-story__journey small { margin-top:4px; font-size:.66rem; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-mute); }
 .owner-story__journey i { font-style:normal; color:var(--noriko-red); font-weight:800; }
-.owner-story h2 { font-size:clamp(2.1rem,3.4vw,3.25rem); max-width:16ch; }
-.owner-story .about-story__lead { font-size:clamp(1.15rem,1.6vw,1.45rem); line-height:1.4; }
+.owner-story h2 { font-size:clamp(2rem,3vw,2.75rem); line-height:1.04; max-width:20ch; }
+.owner-story .about-story__lead { max-width:46ch; font-size:clamp(1.08rem,1.35vw,1.28rem); line-height:1.42; }
+.owner-story p:not(.eyebrow):not(.about-story__lead) { font-size:.95rem; line-height:1.62; }
 .owner-story__company-link { color:inherit; text-decoration-color:var(--noriko-red); text-decoration-thickness:.08em; text-underline-offset:.1em; }
 .owner-story__company-link:hover { color:var(--noriko-red); }
 .owner-story__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:var(--space-6); }
 .owner-story__actions .btn { margin-top:0; }
 
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   .about-hero__grid, .about-story__grid, .about-principle__grid, .owner-story__grid { grid-template-columns:1fr; gap:var(--space-7); }
   .about-story__copy { padding-top:0; }
   .about-hero__grid { padding-block:var(--space-8); }
@@ -1596,7 +1597,8 @@ p { margin: 0 0 var(--space-4); max-width: 64ch; }
   .about-hero__pack--drink { height:245px; }
   .about-world-grid { grid-template-columns:1fr; }
   .about-world { min-height:0; }
-  .owner-story__mark { min-height:320px; }
+  .owner-story__grid > div:last-child { max-width:68ch; }
+  .owner-story__mark { min-height:0; aspect-ratio:4/3; }
   .owner-story__mark img { width:100%; height:100%; object-fit:cover; transform:none; }
   .owner-story__journey { left:20px; right:20px; bottom:22px; }
 }

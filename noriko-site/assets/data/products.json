@@ -373,6 +373,17 @@
    "heat_pips": 3,
    "slug": "fried-fish-spicy",
    "case": null,
+   "servings": "1",
+   "serving_size": "12 g",
+   "ingredients": "Anchovy (fish) 75%, Vegetable Oil (Soybean Oil), Chilli Powder, Water, Ginger, Sugar, Salt, Flavour Enhancers (INS 621, INS 635).",
+   "allergens": "Contains fish, soy or their products.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "45 kcal", "2.25%"], ["Total fat", "2.7 g", "3.73%"], ["Saturated fat", "0.5 g", "2.27%"], ["Trans fat", "0 g", "0.00%"], ["Sodium", "140 mg", "7.00%"], ["Total carbohydrate", "0.6 g", "—"], ["Total sugar", "0.2 g", "—"], ["Added sugar", "0.2 g", "0.40%"], ["Protein", "4 g", "7.40%"]],
+   "nutrition_note": "Contains added permitted artificial flavour.",
+   "source": "Supplied NORIKO 12 g Spicy Fish back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -391,6 +402,17 @@
    "heat_pips": 2,
    "slug": "fried-fish-mala",
    "case": null,
+   "servings": "1",
+   "serving_size": "12 g",
+   "ingredients": "Anchovy (fish) 75%, Vegetable Oil (Soybean Oil), Chilli Powder, Water, Ginger, Sugar, Salt, Pepper, Flavour Enhancers (INS 621, INS 635).",
+   "allergens": "Contains fish, soy or their products.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "45 kcal", "2.25%"], ["Total fat", "2.7 g", "3.73%"], ["Saturated fat", "0.5 g", "2.27%"], ["Trans fat", "0 g", "0.00%"], ["Sodium", "140 mg", "7.00%"], ["Total carbohydrate", "0.6 g", "—"], ["Total sugar", "0.2 g", "—"], ["Added sugar", "0.2 g", "0.40%"], ["Protein", "4 g", "7.40%"]],
+   "nutrition_note": "Contains added permitted artificial Mala flavour.",
+   "source": "Supplied NORIKO 12 g Mala Fish back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -409,6 +431,17 @@
    "heat_pips": 1,
    "slug": "fried-fish-pepper",
    "case": null,
+   "servings": "1",
+   "serving_size": "12 g",
+   "ingredients": "Anchovy (fish) 75%, Vegetable Oil (Soybean Oil), Pickled Pepper [Pepper, Water, Salt, Acidity Regulators (INS 260, INS 330), Antioxidants (INS 316, INS 223)], Water, Ginger, Sugar, Salt, Spices, Flavour Enhancers (INS 621, INS 635).",
+   "allergens": "Contains fish, soy or their products.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "45 kcal", "2.25%"], ["Total fat", "2.7 g", "3.73%"], ["Saturated fat", "0.5 g", "2.27%"], ["Trans fat", "0 g", "0.00%"], ["Sodium", "140 mg", "7.00%"], ["Total carbohydrate", "0.6 g", "—"], ["Total sugar", "0.2 g", "—"], ["Added sugar", "0.2 g", "0.40%"], ["Protein", "4 g", "7.40%"]],
+   "nutrition_note": "Contains added permitted artificial pepper flavour.",
+   "source": "Supplied NORIKO Fish Pepper back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -427,6 +460,17 @@
    "heat_pips": 0,
    "slug": "fried-fish-sweet-sour",
    "case": null,
+   "servings": "1",
+   "serving_size": "12 g",
+   "ingredients": "Anchovy (fish) 75%, Vegetable Oil (Soybean Oil), Maltose Syrup, Fructose Glucose Syrup, Sugar, Water, Ginger, Vinegar, Salt, Spices, Flavour Enhancers (INS 621, INS 635).",
+   "allergens": "Contains fish, soy or their products.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "45 kcal", "2.25%"], ["Total fat", "2.7 g", "3.73%"], ["Saturated fat", "0.5 g", "2.27%"], ["Trans fat", "0 g", "0.00%"], ["Sodium", "140 mg", "7.00%"], ["Total carbohydrate", "1.5 g", "—"], ["Total sugar", "0.8 g", "—"], ["Added sugar", "0.8 g", "1.60%"], ["Protein", "4 g", "7.40%"]],
+   "nutrition_note": "Contains added permitted artificial sweet and sour flavour.",
+   "source": "Supplied NORIKO Fish Sweet and Sour back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -445,6 +489,17 @@
    "heat_pips": 2,
    "slug": "fried-squid-spicy",
    "case": null,
+   "servings": "1",
+   "serving_size": "14 g",
+   "ingredients": "Squid 51%, King Oyster Mushroom 43%, Vegetable Oil (Soybean Oil), Chilli Powder, Salt, Sugar, Sesame, Spices (Pepper), Flavour Enhancers (INS 621, INS 635).",
+   "allergens": "Contains fish, soy, sesame or their products.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "30 kcal", "1.50%"], ["Total fat", "1.5 g", "2.24%"], ["Saturated fat", "0.2 g", "0.91%"], ["Trans fat", "0 g", "0.00%"], ["Sodium", "230 mg", "11.50%"], ["Total carbohydrate", "2.2 g", "—"], ["Total sugar", "0.2 g", "—"], ["Added sugar", "0.2 g", "0.40%"], ["Protein", "1.5 g", "2.78%"]],
+   "nutrition_note": "Contains added artificial flavours.",
+   "source": "Supplied NORIKO 14 g Spicy Squid back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -463,6 +518,17 @@
    "heat_pips": 2,
    "slug": "fermented-tofu-spicy",
    "case": null,
+   "servings": "1",
+   "serving_size": "24 g",
+   "ingredients": "Fermented Tofu Base 77% (Soybean, Water, Firming Agent (INS 516)), Chilli Powder, Vegetable Oil (Soybean Oil), Garlic, Sugar, Salt, Spices (Pepper, Cumin), Flavour Enhancers (INS 621, INS 635).",
+   "allergens": "Contains soy or its products.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "57 kcal", "2.85%"], ["Total fat", "3.5 g", "5.22%"], ["Saturated fat", "0.5 g", "2.27%"], ["Trans fat", "0 g", "0.00%"], ["Sodium", "269 mg", "13.45%"], ["Total carbohydrate", "2 g", "—"], ["Total sugar", "0.6 g", "—"], ["Added sugar", "0.6 g", "1.20%"], ["Protein", "4.5 g", "8.33%"]],
+   "nutrition_note": "Contains added artificial garlic flavour.",
+   "source": "Supplied NORIKO 24 g Spicy Tofu back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -471,16 +537,27 @@
    "world": "snack",
    "name": "Braised Lotus Root Slice",
    "img": "assets/img/snacks/lotus-root.webp",
-   "alt": "NORIKO Braised Lotus Root Slice, spicy, 30 g",
+   "alt": "NORIKO Braised Lotus Root Slice, spicy, 26 g",
    "w": 503,
    "h": 900,
-   "size": "30 g",
+   "size": "26 g",
    "diet": "veg",
    "band": "--band-spicy",
    "heat": null,
    "heat_pips": 0,
    "slug": "braised-lotus-root-slice",
    "case": null,
+   "servings": "1",
+   "serving_size": "26 g",
+   "ingredients": "Lotus Root, Chilli, Vegetable Oil (Soybean), Salt, Spices, Flavour Enhancers (INS 621, INS 635), Acidity Regulators (INS 330, INS 270), Antioxidants (INS 316, INS 223), Colour (INS 160c(iii)), Preservatives (INS 202), Stabilizer (INS 415).",
+   "allergens": "Contains soy.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "21.2 kcal", "1%"], ["Total fat", "0.29 g", "0.14%"], ["Saturated fat", "0 g", "0%"], ["Trans fat", "0 g", "0%"], ["Sodium", "225.4 mg", "11.27%"], ["Total carbohydrate", "4.29 g", "—"], ["Total sugar", "0.2 g", "—"], ["Added sugar", "0 g", "0%"], ["Protein", "0.47 g", "—"]],
+   "nutrition_note": "Contains added artificial stewed flavour.",
+   "source": "Supplied NORIKO 26 g Braised Lotus Root label artwork",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -499,6 +576,17 @@
    "heat_pips": 0,
    "slug": "roasted-tofu-block",
    "case": null,
+   "servings": "1",
+   "serving_size": "25 g",
+   "ingredients": "Soybeans, Water, Vegetable Oil (Soybean), Chilli Powder, Salt, Spices (Cumin, Fennel, Star Anise), Flavour Enhancers (INS 621, INS 635), Preservatives (INS 282, INS 202), Colour (INS 160c(iii)).",
+   "allergens": "Contains soy.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "70 kcal", "3.5%"], ["Total fat", "4 g", "6%"], ["Saturated fat", "0.8 g", "0%"], ["Trans fat", "0 g", "0%"], ["Sodium", "209 mg", "10.5%"], ["Total carbohydrate", "1.53 g", "—"], ["Total sugar", "0.28 g", "—"], ["Added sugar", "0 g", "0%"], ["Protein", "7 g", "—"]],
+   "nutrition_note": "Contains added permitted natural colour and added artificial five-spice flavour.",
+   "source": "Supplied NORIKO 25 g Tofu Block back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -519,6 +607,17 @@
    "case": null,
    "mrp": "₹30.00",
    "usp": "₹1.20/g",
+   "servings": "1",
+   "serving_size": "25 g",
+   "ingredients": "Soybeans, Water, Vegetable Oil (Soybean), Chilli Powder, Salt, Spices (Cumin, Fennel, Star Anise), Flavour Enhancers (INS 621, INS 635), Preservatives (INS 282, INS 202), Colour (INS 160c(iii)).",
+   "allergens": "Contains soy.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "70 kcal", "3.5%"], ["Total fat", "4 g", "6%"], ["Saturated fat", "0.8 g", "0%"], ["Trans fat", "0 g", "0%"], ["Sodium", "209 mg", "10.5%"], ["Total carbohydrate", "1.53 g", "—"], ["Total sugar", "0.28 g", "—"], ["Added sugar", "0 g", "0%"], ["Protein", "7 g", "—"]],
+   "nutrition_note": "Contains permitted natural colour and added artificial five-spice flavour.",
+   "source": "Supplied NORIKO Tofu Curd Skewer back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
@@ -539,6 +638,17 @@
    "case": null,
    "mrp": "₹30.00",
    "usp": "₹1.20/g",
+   "servings": "1",
+   "serving_size": "25 g",
+   "ingredients": "Soybeans, Water, Vegetable Oil (Soybean), Chilli Powder, Salt, Spices (Cumin, Fennel, Star Anise), Flavour Enhancers (INS 621, INS 635), Preservatives (INS 282, INS 202), Colour (INS 160c(iii)).",
+   "allergens": "Contains soy.",
+   "warnings": [
+    "This package contains added MONOSODIUM GLUTAMATE.",
+    "Not recommended for infants below 12 months and pregnant women."
+   ],
+   "nutrition": [["Energy", "70 kcal", "3.5%"], ["Total fat", "4 g", "6%"], ["Saturated fat", "0.8 g", "0%"], ["Trans fat", "0 g", "0%"], ["Sodium", "209 mg", "10.5%"], ["Total carbohydrate", "1.53 g", "—"], ["Total sugar", "0.28 g", "—"], ["Added sugar", "0 g", "0%"], ["Protein", "7 g", "—"]],
+   "nutrition_note": "Contains added permitted natural food colour and added artificial five-spice flavour.",
+   "source": "Supplied NORIKO Tofu Stick back-of-pack label",
    "ready_to_eat": true,
    "audience": "retail",
    "brand": "NORIKO"
