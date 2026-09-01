@@ -152,7 +152,36 @@
   var emptyEl = document.getElementById('enquiry-empty');
   var countEl = document.getElementById('enquiry-count');
   var formEl = document.getElementById('enquiry-form');
+  var enquiryStatus = document.getElementById('enquiry-form-status');
   var addBtns = document.querySelectorAll('.spec-row__cta');
+
+  function submitToFormspree(form, data, statusEl, successMessage) {
+    var submitButton = form.querySelector('[type="submit"]');
+    var originalLabel = submitButton ? submitButton.textContent : '';
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+    }
+    if (statusEl) statusEl.textContent = 'Sending your enquiry…';
+
+    return fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' }
+    }).then(function (response) {
+      if (!response.ok) throw new Error('Form submission failed');
+      if (statusEl) statusEl.textContent = successMessage;
+      return true;
+    }).catch(function () {
+      if (statusEl) statusEl.textContent = 'We could not send your enquiry. Please try again or email info@aepl.biz.';
+      return false;
+    }).finally(function () {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      }
+    });
+  }
 
   function syncButtons() {
     addBtns.forEach(function (b) {
@@ -203,17 +232,29 @@
   if (formEl) {
     formEl.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!formEl.checkValidity()) {
+        formEl.reportValidity();
+        return;
+      }
       if (basket.length === 0) {
         if (countEl) countEl.textContent = 'Add at least one product first';
         return;
       }
-      /* Prototype only — no backend is wired up yet. */
-      if (countEl) countEl.textContent = 'Prototype: submission not yet connected';
+      var data = new FormData(formEl);
+      data.append('products', basket.map(function (item) {
+        return item.name + ' · ' + item.size;
+      }).join('\n'));
+      submitToFormspree(formEl, data, enquiryStatus, 'Thank you. Your product enquiry has been sent.').then(function (sent) {
+        if (!sent) return;
+        formEl.reset();
+        basket = [];
+        render();
+        syncButtons();
+      });
     });
   }
 
-  /* ---- General contact form ----
-     Builds a clear, pre-addressed enquiry in the visitor's email app. */
+  /* ---- General contact form ---- */
   var contactForm = document.getElementById('contact-form');
   var contactStatus = document.getElementById('contact-form-status');
   if (contactForm) {
@@ -224,23 +265,46 @@
         return;
       }
       var data = new FormData(contactForm);
-      var interests = Array.from(contactForm.querySelector('[name="interest"]').selectedOptions)
-        .map(function (option) { return option.value; });
-      var lines = [
-        'Name: ' + data.get('name'),
-        'Firm name: ' + (data.get('firm') || 'Not provided'),
-        'City: ' + data.get('city'),
-        'State: ' + data.get('state'),
-        'Tel / mobile: ' + data.get('phone'),
-        'Email: ' + data.get('email'),
-        'Interested in: ' + interests.join(', '),
-        '',
-        'Message:',
-        data.get('message')
-      ];
-      var subject = 'NORIKO enquiry — ' + data.get('name');
-      if (contactStatus) contactStatus.textContent = 'Opening your email app…';
-      window.location.href = 'mailto:info@aepl.biz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+      submitToFormspree(contactForm, data, contactStatus, 'Thank you. Your enquiry has been sent to the NORIKO India team.').then(function (sent) {
+        if (sent) contactForm.reset();
+      });
+    });
+  }
+
+  var catalogueForm = document.getElementById('catalogue-request-form');
+  var catalogueStatus = document.getElementById('catalogue-request-status');
+  if (catalogueForm) {
+    catalogueForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!catalogueForm.checkValidity()) {
+        catalogueForm.reportValidity();
+        return;
+      }
+      var submitButton = catalogueForm.querySelector('[type="submit"]');
+      var originalLabel = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+      if (catalogueStatus) catalogueStatus.textContent = 'Preparing your catalogue email…';
+
+      var formData = new FormData(catalogueForm);
+      fetch(catalogueForm.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email: formData.get('email'), website: formData.get('website') })
+      }).then(function (response) {
+        return response.json().catch(function () { return {}; }).then(function (body) {
+          if (!response.ok) throw new Error(body.error || 'Delivery failed');
+          return body;
+        });
+      }).then(function () {
+        catalogueForm.reset();
+        if (catalogueStatus) catalogueStatus.textContent = 'Sent. Please check your inbox for the catalogue attachment.';
+      }).catch(function (error) {
+        if (catalogueStatus) catalogueStatus.textContent = error.message || 'We could not send the catalogue. Please try again.';
+      }).finally(function () {
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      });
     });
   }
 

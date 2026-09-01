@@ -361,6 +361,11 @@ def factlist(p):
 
 
 def ingredients(p):
+    # Cook is a professional catalogue. Do not publish ingredients or
+    # nutrition panels on Cook product pages.
+    if p.get("world") == "cook":
+        return ""
+
     if not p.get("ingredients"):
         # Honest gap — this SKU's back-of-pack artwork has not been supplied.
         return """
