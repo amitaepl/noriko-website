@@ -16,6 +16,7 @@ import html
 import json
 import pathlib
 import sys
+import urllib.parse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from imgsize import img_size
@@ -23,7 +24,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "31"
+CSS_V = "39"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -84,9 +85,6 @@ AUDIENCE = {
         "label": "HoReCa",
         "crumb": ("../index.html#horeca", "HoReCa"),
         "world_href": "../index.html#horeca",
-        # MASTER §6: HoReCa's primary CTA is "Request pricing".
-        "cta": ('<a class="btn btn--primary" href="../index.html#horeca">Request pricing</a>\n'
-                '          <a class="btn btn--ghost" href="../retail.html">Retail range</a>'),
     },
 }
 
@@ -97,6 +95,20 @@ ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 def plain(s):
     """HTML-escaped source text -> plain text, for JSON-LD."""
     return html.unescape(s or "")
+
+
+def cta_for(p):
+    """Keep each product's next step inside the range the visitor is viewing."""
+    if p.get("audience", "retail") == "horeca":
+        product = urllib.parse.quote(p["name"])
+        return (
+            '<a class="btn btn--primary" href="../index.html?interest=Cook&amp;product=' +
+            product + '#contact">Enquire about this product</a>\n'
+            '          <a class="btn btn--ghost" href="../retail.html#cook">Back to Cook range</a>\n'
+            '          <p class="pdp__enquiry-note">Interested in stocking this product? '
+            'Pack formats and availability may vary. Contact our team for details.</p>'
+        )
+    return AUDIENCE["retail"]["cta"]
 
 
 def head(p):
@@ -224,15 +236,15 @@ def hero(p):
     aud = p.get("audience", "retail")
     a = AUDIENCE[aud]
 
-    # The foodservice catalogue spans brands. Anything that is not NORIKO says
-    # so on its own page, in words, above the pack size.
+    # The range spans brands. Preserve the manufacturer's actual brand and state
+    # NORIKO's role separately so an imported product is never mistaken for a
+    # NORIKO-owned product.
     brand = p.get("brand", "NORIKO")
     brandbadge = ""
     if not brand.startswith("NORIKO"):
         label = brand.replace(" — not NORIKO", "")
         brandbadge = ("\n        <p class=\"pdp__brand\"><span>" + label +
-                      "</span> Listed in the NORIKO foodservice catalogue. "
-                      "This is not a NORIKO product.</p>")
+                      "</span> NORIKO is the authorised importer and distributor in India.</p>")
 
     band = ""
     if p["world"] == "snack":
@@ -295,7 +307,7 @@ def hero(p):
   </section>
 """.format(band=band, img=p["img"], alt=p["alt"], w=p["w"], h=p["h"], dish=dish,
            world_href=(a["world_href"] + w["hash"]) if aud == "retail" else a["world_href"],
-           wlabel=w["label"], audlabel=a["label"], cta=a["cta"],
+           wlabel=w["label"], audlabel=a["label"], cta=cta_for(p),
            name=p["name"], use=use, chips=chips(p), price=price,
            brandbadge=brandbadge)
 
@@ -592,7 +604,7 @@ TAIL = """
   </div>
 </footer>
 
-<script src="../assets/js/noriko.js"></script>
+<script src="../assets/js/noriko.js?v=6"></script>
 </body>
 </html>
 """

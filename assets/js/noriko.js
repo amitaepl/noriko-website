@@ -9,9 +9,36 @@
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('primary-nav');
   if (toggle && nav) {
+    function closeNav(returnFocus) {
+      if (!nav.classList.contains('is-open')) return;
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+      if (returnFocus) toggle.focus();
+    }
+
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open);
+    });
+
+    nav.addEventListener('click', function (event) {
+      if (event.target.closest('a')) closeNav(false);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (nav.classList.contains('is-open') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+        closeNav(false);
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeNav(true);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) closeNav(false);
     });
   }
 
@@ -20,7 +47,15 @@
      browser, or an observer that never fires still shows all content. */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Crop the food illustration from each snack's own front packshot. */
+  /* Use real plated-food photography where supplied. Remaining snacks fall
+     back to a crop of the food illustration printed on their own pack. */
+  var snackDishImages = {
+    'big-latiao.webp': 'assets/img/snack-dishes/latiao.webp',
+    'mini-latiao.webp': 'assets/img/snack-dishes/latiao.webp',
+    'kiss-burn.webp': 'assets/img/snack-dishes/kiss-burn.webp',
+    'konjac-hot.webp': 'assets/img/snack-dishes/konjac.webp',
+    'konjac-sour.webp': 'assets/img/snack-dishes/konjac.webp'
+  };
   var snackFoodFocus = {
     'fish-spicy.webp': '50% 68%',
     'fish-mala.webp': '50% 68%',
@@ -41,12 +76,14 @@
   document.querySelectorAll('.snack-card__media > img').forEach(function (pack) {
     var cleanSrc = pack.getAttribute('src').split('?')[0];
     var file = cleanSrc.substring(cleanSrc.lastIndexOf('/') + 1);
-    if (!snackFoodFocus[file]) return;
-    var food = pack.cloneNode(false);
+    if (!snackFoodFocus[file] && !snackDishImages[file]) return;
+    var food = snackDishImages[file] ? document.createElement('img') : pack.cloneNode(false);
+    if (snackDishImages[file]) food.src = snackDishImages[file];
     food.className = 'snack-card__food';
     food.alt = '';
     food.setAttribute('aria-hidden', 'true');
-    food.style.setProperty('--food-focus', snackFoodFocus[file]);
+    if (snackFoodFocus[file]) food.style.setProperty('--food-focus', snackFoodFocus[file]);
+    food.loading = 'lazy';
     pack.parentNode.appendChild(food);
   });
 
@@ -258,6 +295,20 @@
   var contactForm = document.getElementById('contact-form');
   var contactStatus = document.getElementById('contact-form-status');
   if (contactForm) {
+    var contactParams = new URLSearchParams(window.location.search);
+    var requestedInterest = contactParams.get('interest');
+    var requestedProduct = contactParams.get('product');
+    if (requestedInterest) {
+      Array.prototype.forEach.call(contactForm.querySelectorAll('[name="interest"] option'), function (option) {
+        option.selected = option.value.toLowerCase() === requestedInterest.toLowerCase();
+      });
+    }
+    if (requestedProduct) {
+      var messageField = contactForm.querySelector('[name="message"]');
+      if (messageField && !messageField.value) {
+        messageField.value = 'I am interested in ' + requestedProduct + '. Please share availability, suitable pack formats and pricing.';
+      }
+    }
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!contactForm.checkValidity()) {
@@ -267,6 +318,23 @@
       var data = new FormData(contactForm);
       submitToFormspree(contactForm, data, contactStatus, 'Thank you. Your enquiry has been sent to the NORIKO India team.').then(function (sent) {
         if (sent) contactForm.reset();
+      });
+    });
+  }
+
+  /* ---- Visitor recipe suggestions ---- */
+  var recipeSuggestionForm = document.getElementById('recipe-suggestion-form');
+  var recipeSuggestionStatus = document.getElementById('recipe-suggestion-status');
+  if (recipeSuggestionForm) {
+    recipeSuggestionForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!recipeSuggestionForm.checkValidity()) {
+        recipeSuggestionForm.reportValidity();
+        return;
+      }
+      var data = new FormData(recipeSuggestionForm);
+      submitToFormspree(recipeSuggestionForm, data, recipeSuggestionStatus, 'Thank you. Your recipe suggestion has been sent to the NORIKO team.').then(function (sent) {
+        if (sent) recipeSuggestionForm.reset();
       });
     });
   }
@@ -306,6 +374,56 @@
         submitButton.textContent = originalLabel;
       });
     });
+  }
+
+  /* ---- Connect product detail pages to recipes that use them ---- */
+  var recipeLibrary = {
+    bamboo: ['bamboo-water-chestnut-stir-fry.html', 'Bamboo & Water Chestnut Stir-Fry', 'bamboo-shoot-stir-fry-final.png'],
+    blackFungus: ['black-fungus-cucumber-salad.html', 'Black Fungus Cucumber Salad', 'black-fungus-salad-final.png'],
+    crispyRice: ['crispy-sushi-rice-bites.html', 'Crispy Sushi Rice Bites', 'crispy-sushi-rice-bites-final.png'],
+    paneer: ['gochujang-honey-paneer.html', 'Gochujang Honey Paneer', 'gochujang-honey-paneer-final.png'],
+    ramen: ['gochujang-ramen.html', 'Gochujang Ramen', 'spicy-ramen-eggs-final.png'],
+    kimchiRice: ['kimchi-fried-rice.html', 'Kimchi Fried Rice', 'kimchi-fried-rice-final.png'],
+    mangoRice: ['mango-sticky-rice.html', 'Mango Sticky Rice', 'mango-sticky-rice-final.png'],
+    udon: ['sesame-shiitake-udon.html', 'Sesame Shiitake Udon', 'miso-butter-udon-final.png'],
+    soba: ['sesame-soba-salad.html', 'Sesame Soba Salad', 'sesame-soba-salad-final.png'],
+    shiitakeNoodles: ['shiitake-chilli-garlic-noodles.html', 'Shiitake Chilli Garlic Noodles', 'shiitake-chilli-garlic-noodles-final.png']
+  };
+  var productRecipeMap = {
+    'canned-bamboo-shoots.html': ['bamboo'],
+    'canned-water-chestnuts.html': ['bamboo'],
+    'dried-black-fungus.html': ['blackFungus'],
+    'sushi-rice.html': ['crispyRice'],
+    'sushi-vinegar.html': ['crispyRice'],
+    'noriko-sushi-vinegar-500ml.html': ['crispyRice'],
+    'mayonnaise.html': ['crispyRice'],
+    'gochujang.html': ['crispyRice', 'paneer', 'ramen'],
+    'nori-sheet-10.html': ['crispyRice', 'ramen', 'kimchiRice'],
+    'nori-sheet-50.html': ['crispyRice', 'ramen', 'kimchiRice'],
+    'rice-vinegar.html': ['bamboo', 'blackFungus', 'crispyRice', 'paneer', 'udon', 'soba', 'shiitakeNoodles'],
+    'rice-vinegar-1-8l.html': ['bamboo', 'blackFungus', 'crispyRice', 'paneer', 'udon', 'soba', 'shiitakeNoodles'],
+    'sesame-oil.html': ['bamboo', 'blackFungus', 'paneer', 'ramen', 'kimchiRice', 'udon', 'soba', 'shiitakeNoodles'],
+    'ramen-noodles.html': ['ramen'],
+    'kimchi-sauce.html': ['kimchiRice'],
+    'glutinous-rice.html': ['mangoRice'],
+    'udon-noodles.html': ['udon'],
+    'soba-noodles.html': ['soba'],
+    'dried-shiitake-mushroom.html': ['udon', 'shiitakeNoodles']
+  };
+  var productPageName = window.location.pathname.split('/').pop();
+  var linkedRecipeKeys = productRecipeMap[productPageName];
+  var productInfo = document.querySelector('.pdp__info');
+  if (linkedRecipeKeys && productInfo && !productInfo.querySelector('.pdp-recipes')) {
+    var recipeBlock = document.createElement('aside');
+    recipeBlock.className = 'pdp-recipes';
+    recipeBlock.setAttribute('aria-label', 'Recipes using this product');
+    recipeBlock.innerHTML = '<p class="eyebrow">Cook with this product</p><div class="pdp-recipes__list">' + linkedRecipeKeys.map(function (key) {
+      var recipe = recipeLibrary[key];
+      return '<a class="pdp-recipe-link" href="../recipes/' + recipe[0] + '"><img src="../assets/img/recipes/' + recipe[2] + '" alt="" width="160" height="100" loading="lazy"><span><strong>' + recipe[1] + '</strong><small>View recipe <b aria-hidden="true">→</b></small></span></a>';
+    }).join('') + '</div>';
+    var enquiryActions = productInfo.querySelector('.pdp__actions');
+    if (enquiryActions) enquiryActions.insertAdjacentElement('afterend', recipeBlock);
+    else productInfo.appendChild(recipeBlock);
   }
 
   render();

@@ -15,6 +15,8 @@ afterwards to put the dish layers back.
 import json
 import pathlib
 import re
+import subprocess
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PRODUCTS = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))["products"]
@@ -28,7 +30,8 @@ def card(p):
     brand_line = ""
     if not brand.startswith("NORIKO"):
         brand_line = ('\n            <p class="product-card__brand">'
-                      + brand.replace(" — not NORIKO", "") + "</p>")
+                      + brand.replace(" — not NORIKO", "") +
+                      ' <span>· Imported &amp; distributed by NORIKO</span></p>')
 
     dish = ""
     if p.get("dish_needed"):
@@ -84,6 +87,12 @@ def main():
           % (len(cook) - len(other), len(other)))
 
     sync_counts()
+
+    # Rebuilding the cards replaces their markup, including any dish-photo
+    # hover layers. Restore those layers automatically so a routine catalogue
+    # update cannot silently remove the food photography.
+    subprocess.run([sys.executable, str(ROOT / "tools/apply-dish-images.py")],
+                   cwd=ROOT, check=True)
 
 
 def sync_counts():

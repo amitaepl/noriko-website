@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/icon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon-180.png">
-<link rel="stylesheet" href="assets/css/noriko.css?v=36">
+<link rel="stylesheet" href="assets/css/noriko.css?v=41">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -27,7 +27,7 @@
     <nav class="audience-switch" aria-label="Choose your audience">
       <span class="audience-switch__label" id="aud-label">I'm here for</span>
       <a href="retail.html" aria-describedby="aud-label">Retail</a>
-      <a href="#horeca">HoReCa &amp; Professional Kitchen</a>
+      <a href="horeca.html">HoReCa &amp; Professional Kitchen</a>
     </nav>
     <div class="audience-bar__aside">
       <a href="#contact">Trade &amp; stockist enquiries</a>
@@ -53,7 +53,7 @@
       <a href="#cook">Cook</a>
       <a href="#snack">Snack</a>
       <a href="#juzo">Drink</a>
-      <a href="#horeca">HoReCa</a>
+      <a href="horeca.html">HoReCa</a>
       <a href="#inspiration">How to use</a>
       <a href="about.html">About</a>
       <a href="#contact">Contact</a>
@@ -79,7 +79,7 @@
           Explore the range
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn--ghost" href="#horeca">For professional kitchens</a>
+        <a class="btn btn--ghost" href="horeca.html">For professional kitchens</a>
       </div>
 
     </div>
@@ -265,6 +265,7 @@
           </div>
         </li>
       </ul>
+
     </div>
   </section>
 
@@ -611,8 +612,9 @@
       <div class="horeca__grid">
         <div>
           <p class="eyebrow">HoReCa · Professional kitchen</p>
-          <h2 id="horeca-h">Pack sizes built for service</h2>
-          <p class="lede">Restaurants, hotels, cafés, cloud kitchens and caterers. Product specifications, professional pack sizes and case configurations upfront, so you can find what your kitchen needs quickly.</p>
+          <h2 id="horeca-h">Built for kitchens that cannot afford inconsistency.</h2>
+          <p class="lede">NORIKO has earned a distinct place across India’s professional food ecosystem through dependable quality, consistent performance, practical formats, supply stability and a range built around how commercial kitchens actually operate.</p>
+          <a class="link-arrow horeca__story-link" href="horeca.html">Discover NORIKO for HoReCa <span aria-hidden="true">→</span></a>
 
           <ul class="horeca__cats">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Sushi &amp; Nori</li>
@@ -962,6 +964,27 @@
         <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/black-fungus-salad-final.png?v=1" alt="Chilled black fungus and cucumber salad" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/black-fungus-cucumber-salad.html">Black Fungus Cucumber Salad</a></h3><p>A refreshing, crunchy salad with chilli, coriander and tangy dressing.</p><p class="inspo-card__tag">35 minutes · Serves 4 · Vegan</p></div></li>
         <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/mango-sticky-rice-final.png?v=1" alt="Mango sticky rice with coconut" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/mango-sticky-rice.html">Mango Sticky Rice</a></h3><p>Coconut-scented sticky rice with ripe mango and a delicate sesame finish.</p><p class="inspo-card__tag">50 minutes · Serves 4 · Vegan</p></div></li>
       </ul>
+
+      <div class="recipe-invite reveal" id="suggest-a-recipe">
+        <div class="recipe-invite__copy">
+          <p class="eyebrow">The NORIKO recipe collection is growing</p>
+          <h3>More recipes are cooking.</h3>
+          <p>Have a dish you would like us to create—or a NORIKO product you want fresh ideas for? Send us your suggestion. It may inspire one of our next recipes.</p>
+          <div class="recipe-invite__count"><strong>10</strong><span>recipes now<br>more coming soon</span></div>
+        </div>
+        <form class="recipe-invite__form" id="recipe-suggestion-form" action="https://formspree.io/f/xdeoenjo" method="post">
+          <input type="hidden" name="subject" value="New recipe suggestion from noriko.in">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+          <label><span>Your name</span><input type="text" name="name" autocomplete="name" required></label>
+          <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="recipe-invite__wide"><span>NORIKO product <small>Optional</small></span><input type="text" name="product" placeholder="For example: Gochujang or Soba Noodles"></label>
+          <label class="recipe-invite__wide"><span>Your recipe idea</span><textarea name="message" rows="4" placeholder="Tell us the dish, flavour or idea you would like to see…" required></textarea></label>
+          <div class="recipe-invite__submit recipe-invite__wide">
+            <button class="btn btn--primary" type="submit">Suggest a recipe</button>
+            <p id="recipe-suggestion-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -1075,7 +1098,7 @@
   </div>
 </footer>
 
-<script src="assets/js/noriko.js?v=4"></script>
+<script src="assets/js/noriko.js?v=8"></script>
 </body>
 </html>
 

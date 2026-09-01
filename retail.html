@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/icon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon-180.png">
-<link rel="stylesheet" href="assets/css/noriko.css?v=31">
+<link rel="stylesheet" href="assets/css/noriko.css?v=41">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -22,7 +22,7 @@
     <nav class="audience-switch" aria-label="Choose your audience">
       <span class="audience-switch__label" id="aud-label">I'm here for</span>
       <a href="retail.html" aria-current="page" aria-describedby="aud-label">Retail</a>
-      <a href="index.html#horeca">HoReCa &amp; Professional Kitchen</a>
+      <a href="horeca.html">HoReCa &amp; Professional Kitchen</a>
     </nav>
     <div class="audience-bar__aside">
       <a href="index.html#contact">Trade &amp; stockist enquiries</a>
@@ -47,7 +47,7 @@
       <a href="#cook">Cook</a>
       <a href="#snack">Snack</a>
       <a href="#drink">Drink</a>
-      <a href="index.html#horeca">HoReCa</a>
+      <a href="horeca.html">HoReCa</a>
       <a href="index.html#inspiration">How to use</a>
       <a href="about.html">About</a>
       <a href="index.html#contact">Contact</a>
@@ -69,17 +69,29 @@
        Page intro
        ============================================================ -->
   <section class="page-head" aria-labelledby="page-h">
-    <div class="container">
-      <hr class="rule">
-      <p class="eyebrow">Retail</p>
-      <h1 id="page-h">Consumer products for snacking and drinking.</h1>
-      <p class="lede">Two NORIKO ranges, made for supermarket shelves, modern trade and quick commerce. Cooking ingredients are sold in professional pack sizes — see <a href="index.html#horeca">HoReCa</a>.</p>
+    <div class="container retail-head">
+      <div class="retail-head__copy">
+        <hr class="rule">
+        <p class="eyebrow">Retail</p>
+        <h1 id="page-h">Bold snacks.<br>Playful drinks.</h1>
+        <p class="lede">Ready-to-eat NORIKO snacks and JUZO popping boba drinks, made for quick cravings, colourful shelves and easy discovery.</p>
 
-      <div class="jump">
-        <a href="#cook" style="--dot:var(--cook-deep)"><i aria-hidden="true"></i>Cook</a>
-        <a href="#snack" style="--dot:var(--band-spicy)"><i aria-hidden="true"></i>Snack</a>
-        <a href="#drink" style="--dot:var(--juzo-pineapple)"><i aria-hidden="true"></i>Drink · JUZO</a>
+        <div class="jump">
+          <a href="#snack" style="--dot:var(--band-spicy)"><i aria-hidden="true"></i>Explore snacks</a>
+          <a href="#drink" style="--dot:var(--juzo-pineapple)"><i aria-hidden="true"></i>Meet JUZO</a>
+        </div>
+        <a class="retail-head__trade" href="index.html#horeca">Looking for cooking ingredients? Visit HoReCa <span aria-hidden="true">→</span></a>
       </div>
+
+      <figure class="retail-head__visual" aria-label="A selection of NORIKO snacks and a JUZO blueberry popping boba drink">
+        <span class="retail-head__stamp">Snack happy<br><strong>Sip different</strong></span>
+        <span class="retail-head__orbit retail-head__orbit--one" aria-hidden="true"></span>
+        <span class="retail-head__orbit retail-head__orbit--two" aria-hidden="true"></span>
+        <img class="retail-head__pack retail-head__pack--fish" src="assets/img/snacks/fish-spicy.webp" alt="" width="470" height="900">
+        <img class="retail-head__pack retail-head__pack--tofu" src="assets/img/snacks/kiss-burn.webp" alt="" width="536" height="900">
+        <img class="retail-head__pack retail-head__pack--juzo" src="assets/img/juzo/juzo-blueberry.webp" alt="" width="720" height="900">
+        <figcaption>Ready to eat. Ready to sip. Always easy to spot.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -96,7 +108,7 @@
           <img src="assets/img/packshots/sushi-rice.webp" alt="NORIKO Sushi Rice, 1 kg" width="542" height="900" loading="eager">
         </span>
         <span>
-          <span class="world-row__count">32 products</span>
+          <span class="world-row__count">47 products</span>
           <h3>Cook</h3>
           <p>Rice, vinegars, pastes and canned vegetables for cooking Asian food at home.</p>
           <span class="world-row__go">See the Cook range
@@ -110,7 +122,7 @@
           <img src="assets/img/snacks/squid-spicy.webp" alt="NORIKO Fried Squid Spicy Flavoured Snack, 14 g" width="485" height="900" loading="lazy">
         </span>
         <span>
-          <span class="world-row__count">13 products</span>
+          <span class="world-row__count">15 products</span>
           <h3>Snack</h3>
           <p>Fish, squid, tofu and lotus root. Ready to eat, in flavours from pepper and sweet &amp; sour through to mala.</p>
           <span class="world-row__go">See the Snack range
@@ -210,6 +222,21 @@
             <p class="product-card__taste">Seasoned vinegar for sushi rice, pre-blended so it can be folded straight through.</p>
             <div class="product-card__meta">
               <span class="product-card__size num">1.8 L</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/noriko-sushi-vinegar-500ml.jpeg" alt="NORIKO Sushi Vinegar, 500 ml" width="1024" height="1536" loading="lazy">
+            <img class="dish" src="assets/img/dishes/noriko-sushi-vinegar-500ml.webp" alt="Seasoned sushi rice with maki rolls and sesame" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3><a href="products/noriko-sushi-vinegar-500ml.html">Sushi Vinegar (500 ml)</a></h3>
+            <p class="product-card__taste">Seasoned vinegar for sushi rice, dressings, marinades and quick pickles.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">500 ml</span>
               <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
             </div>
           </div>
@@ -612,11 +639,234 @@
             <img class="dish" src="assets/img/dishes/sesame-oil.webp" alt="Jianhua Sesame Oil beside a cold noodle salad and a braised dish, with sesame seeds" width="1536" height="1024" loading="lazy" style="--dish-focus:100% 50%">
           </div>
           <div class="product-card__body">
-            <p class="product-card__brand">Jianhua</p>
+            <p class="product-card__brand">Jianhua <span>· Imported &amp; distributed by NORIKO</span></p>
             <h3><a href="products/sesame-oil.html">Sesame Oil</a></h3>
             <p class="product-card__taste">Toasted sesame oil, used as a finishing seasoning rather than for frying.</p>
             <div class="product-card__meta">
               <span class="product-card__size num">450 ml</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/chtoura-pomegranate-molasses-500ml.jpeg" alt="Chtoura Foods Pomegranate Molasses, 500 ml" width="775" height="1600" loading="lazy">
+            <img class="dish" src="assets/img/dishes/chtoura-pomegranate-molasses-500ml.webp" alt="Roasted cauliflower and aubergine finished with pomegranate molasses, walnuts and pomegranate arils" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Chtoura Foods <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/chtoura-pomegranate-molasses-500ml.html">Pomegranate Molasses</a></h3>
+            <p class="product-card__taste">A concentrated sweet-tart pomegranate condiment for marinades, dressings, dips and finishing.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">500 ml</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/chtoura-orange-blossom-water-500ml.jpeg" alt="Chtoura Foods Orange Blossom Water, 500 ml" width="775" height="1600" loading="lazy">
+            <img class="dish" src="assets/img/dishes/chtoura-orange-blossom-water-500ml.webp" alt="Orange blossom panna cotta topped with pistachios and orange zest" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Chtoura Foods <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/chtoura-orange-blossom-water-500ml.html">Orange Blossom Water</a></h3>
+            <p class="product-card__taste">Fragrant orange blossom water for desserts, drinks and Middle Eastern recipes.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">500 ml</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/healthy-boy-mushroom-vegetarian-sauce.jpeg" alt="Dek Som Boon Mushroom Vegetarian Sauce" width="788" height="1600" loading="lazy">
+            <img class="dish" src="assets/img/dishes/healthy-boy-mushroom-vegetarian-sauce.webp" alt="Mushroom and bok choy stir-fry finished with scallions and sesame" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Dek Som Boon (Healthy Boy Brand) <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/healthy-boy-mushroom-vegetarian-sauce.html">Mushroom Vegetarian Sauce</a></h3>
+            <p class="product-card__taste">A savoury mushroom-based seasoning sauce for stir-fries, vegetables, noodles and marinades.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">Pack size on enquiry</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/kruawangthip-tempura-batter-mix-1kg.jpeg" alt="Kruawangthip Tempura Batter Mix Flour, 1 kg" width="1023" height="1537" loading="lazy">
+            <img class="dish" src="assets/img/dishes/kruawangthip-tempura-batter-mix-1kg.webp" alt="Crisp prawn and vegetable tempura platter with dipping sauce" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Kruawangthip <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/kruawangthip-tempura-batter-mix-1kg.html">Tempura Batter Mix Flour</a></h3>
+            <p class="product-card__taste">A ready batter mix for light, crisp tempura-style coatings.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">1 kg</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/golden-prize-fish-sauce-700ml.jpeg" alt="Golden Prize Fish Sauce, 700 ml" width="1024" height="1536" loading="lazy">
+            <img class="dish" src="assets/img/dishes/golden-prize-fish-sauce-700ml.webp" alt="Thai green papaya salad with tomato, long beans, peanuts and herbs" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Golden Prize <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/golden-prize-fish-sauce-700ml.html">Fish Sauce</a></h3>
+            <p class="product-card__taste">A savoury fish sauce for curries, stir-fries, marinades, dressings and dipping sauces.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">700 ml</span>
+              <span class="diet diet--nonveg"><i aria-hidden="true"></i>Non-veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/golden-prize-oyster-sauce-700g.jpeg" alt="Golden Prize Premium Oyster Sauce, 700 g" width="1024" height="1536" loading="lazy">
+            <img class="dish" src="assets/img/dishes/golden-prize-premium-oyster-sauce-700g.webp" alt="Oyster sauce beef stir-fry with broccoli, peppers and steamed rice" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Golden Prize <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/golden-prize-premium-oyster-sauce-700g.html">Premium Oyster Sauce</a></h3>
+            <p class="product-card__taste">A rich savoury sauce for stir-fries, marinades, noodles and vegetable dishes.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">700 g</span>
+              <span class="diet diet--nonveg"><i aria-hidden="true"></i>Non-veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/noriko-chinkiang-vinegar.jpeg" alt="NORIKO Chinkiang Vinegar" width="1024" height="1536" loading="lazy">
+            <img class="dish" src="assets/img/dishes/noriko-chinkiang-vinegar.webp" alt="Pan-fried vegetable dumplings with Chinkiang vinegar dipping sauce" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3><a href="products/noriko-chinkiang-vinegar.html">Chinkiang Vinegar</a></h3>
+            <p class="product-card__taste">A dark, aromatic Chinese vinegar for dipping sauces, braises, noodles and stir-fries.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">Pack size on enquiry</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/healthy-boy-thin-soy-sauce-700ml.jpeg" alt="Healthy Boy Brand Thin Soy Sauce, 700 ml" width="1023" height="1537" loading="lazy">
+            <img class="dish" src="assets/img/dishes/healthy-boy-thin-soy-sauce-700ml.webp" alt="Thai basil tofu stir-fry with green beans and jasmine rice" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Healthy Boy Brand <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/healthy-boy-thin-soy-sauce-700ml.html">Thin Soy Sauce</a></h3>
+            <p class="product-card__taste">A light Thai-style soy sauce for seasoning, marinades, stir-fries and table use.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">700 ml</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/kai-sriracha-hot-chilli-sauce-770g.jpeg" alt="KAI Brand Sriracha Hot Chilli Sauce, 770 g" width="1024" height="1536" loading="lazy">
+            <img class="dish" src="assets/img/dishes/kai-sriracha-hot-chilli-sauce-770g.webp" alt="Spicy sriracha sesame noodles with cucumber, scallions and lime" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">KAI Brand <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/kai-sriracha-hot-chilli-sauce-770g.html">Sriracha Hot Chilli Sauce</a></h3>
+            <p class="product-card__taste">A hot chilli sauce for dipping, drizzling, noodles, rice dishes and marinades.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">770 g</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/laoganma-chilli-sauce-fermented-soybean-230g.jpeg" alt="Lao Gan Ma Chilli Sauce with Fermented Soybean, 230 g" width="337" height="794" loading="lazy">
+            <img class="dish" src="assets/img/dishes/lao-gan-ma-chilli-sauce-fermented-soybean-230g.webp" alt="Silken tofu and aubergine in fermented-soybean chilli sauce" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Lao Gan Ma <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/lao-gan-ma-chilli-sauce-fermented-soybean-230g.html">Chilli Sauce with Fermented Soybean</a></h3>
+            <p class="product-card__taste">A savoury chilli condiment with fermented soybean for rice, noodles, dumplings and stir-fries.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">230 g</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/laoganma-chilli-sauce-chicken-oil-280g.jpeg" alt="Lao Gan Ma Chilli Sauce with Chicken Oil, 280 g" width="338" height="816" loading="lazy">
+            <img class="dish" src="assets/img/dishes/lao-gan-ma-chilli-sauce-chicken-oil-280g.webp" alt="Chilli-oil chicken noodles with bok choy and scallions" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Lao Gan Ma <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/lao-gan-ma-chilli-sauce-chicken-oil-280g.html">Chilli Sauce with Chicken Oil</a></h3>
+            <p class="product-card__taste">A rich chilli condiment with chicken oil for rice, noodles, dumplings and stir-fries.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">280 g</span>
+              <span class="diet diet--nonveg"><i aria-hidden="true"></i>Non-veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/laoganma-spicy-chilli-crisp-210g.jpeg" alt="Lao Gan Ma Spicy Chilli Crisp, 210 g" width="1024" height="1536" loading="lazy">
+            <img class="dish" src="assets/img/dishes/lao-gan-ma-spicy-chilli-crisp-210g.webp" alt="Crisp fried eggs over rice finished with spicy chilli crisp, scallions and sesame" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Lao Gan Ma <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/lao-gan-ma-spicy-chilli-crisp-210g.html">Spicy Chilli Crisp</a></h3>
+            <p class="product-card__taste">A crunchy chilli-oil condiment for noodles, rice, dumplings, eggs and vegetables.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">210 g</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/chtoura-coarse-brown-bulgur-900g.jpeg" alt="Chtoura Foods Coarse Brown Bulgur, 900 g" width="1200" height="1200" loading="lazy">
+            <img class="dish" src="assets/img/dishes/chtoura-coarse-brown-bulgur-900g.webp" alt="Coarse brown bulgur pilaf with aubergine, chickpeas, almonds and parsley" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Chtoura Foods <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/chtoura-coarse-brown-bulgur-900g.html">Coarse Brown Bulgur</a></h3>
+            <p class="product-card__taste">Coarsely cracked brown bulgur wheat for pilafs, grain bowls, stuffed vegetables and traditional Middle Eastern dishes.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">900 g</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
+            </div>
+          </div>
+        </li>
+        <li class="product-card reveal">
+          <div class="product-card__media">
+            <span class="product-card__flag product-card__flag--cook">Cook</span>
+            <img class="pack" src="assets/img/packshots/imported-brands/chtoura-coarse-white-bulgur-900g.jpeg" alt="Chtoura Foods Coarse White Bulgur, 900 g" width="1254" height="1254" loading="lazy">
+            <img class="dish" src="assets/img/dishes/chtoura-coarse-white-bulgur-900g.webp" alt="Coarse white bulgur pilaf with tomato, herbs, roasted pepper, lemon and pine nuts" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <p class="product-card__brand">Chtoura Foods <span>· Imported &amp; distributed by NORIKO</span></p>
+            <h3><a href="products/chtoura-coarse-white-bulgur-900g.html">Coarse White Bulgur</a></h3>
+            <p class="product-card__taste">Coarsely cracked white bulgur wheat for pilafs, grain bowls, stuffed vegetables and traditional Middle Eastern dishes.</p>
+            <div class="product-card__meta">
+              <span class="product-card__size num">900 g</span>
+              <span class="diet diet--veg"><i aria-hidden="true"></i>Veg</span>
             </div>
           </div>
         </li>
@@ -933,7 +1183,7 @@
   </div>
 </footer>
 
-<script src="assets/js/noriko.js?v=2"></script>
+<script src="assets/js/noriko.js?v=8"></script>
 </body>
 </html>
 
