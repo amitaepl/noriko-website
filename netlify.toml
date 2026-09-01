@@ -6,6 +6,12 @@
   node_bundler = "esbuild"
   included_files = ["private/ASHOKASHA-HORECA-CATALOG-AUGUST-2026.pdf"]
 
+[[redirects]]
+  from = "/api/send-catalogue"
+  to = "/.netlify/functions/send-catalogue"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/api/send-catalogue"
   [headers.values]
