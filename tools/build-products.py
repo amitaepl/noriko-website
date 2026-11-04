@@ -24,7 +24,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "52"
+CSS_V = "53"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
