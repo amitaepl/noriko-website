@@ -1929,3 +1929,13 @@ body.nav-open .wa-float { display: none; }
   body.has-pdp-sticky .wa-float{display:none}
   body.has-pdp-sticky{padding-bottom:72px}
 }
+
+/* About: "A brand by Ashokasha" — larger picture that follows the text, calmer type */
+@media (min-width: 901px) {
+  .owner-story__grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: start; }
+  .owner-story__mark { aspect-ratio: 1 / 1; position: sticky; top: 96px; }
+  .owner-story h2 { font-size: clamp(1.75rem, 2.4vw, 2.35rem); }
+  .owner-story .about-story__lead { font-size: clamp(1rem, 1.1vw, 1.12rem); line-height: 1.45; }
+  .owner-story p:not(.eyebrow):not(.about-story__lead) { font-size: .9rem; line-height: 1.6; }
+  .owner-story p + p { margin-top: var(--space-3); }
+}
