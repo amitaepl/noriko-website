@@ -41,6 +41,8 @@ tools/import-dish-images.py Converts supplied imagery to web-ready WebP (needs P
 tools/check-links.py        Verifies every local href and asset resolves.
 tools/add-share-tags.py     Adds canonical + share-preview tags and writes sitemap.xml.
                             Re-run after build-products.py.
+tools/sync-horeca-list.py   Copies the HoReCa product list + enquiry basket from index.html
+                            into horeca.html. Run after editing that list.
 assets/img/dishes/          Dish imagery — drop <slug>.webp in, see its README
 assets/js/noriko.js         Shared behaviour for both pages.
 assets/css/noriko.css       The whole design system. Tokens at the top.
