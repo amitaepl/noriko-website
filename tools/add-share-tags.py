@@ -96,6 +96,90 @@ def tags_for(text, rel):
     return "\n".join(lines) + "\n"
 
 
+LD_START, LD_END = "<!-- seo-data -->", "<!-- /seo-data -->"
+LD_RE = re.compile(re.escape(LD_START) + r".*?" + re.escape(LD_END) + r"\n?", re.S)
+
+
+def ld_script(data):
+    body = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    return f'<script type="application/ld+json">{body}</script>'
+
+
+def organization_ld():
+    return {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NORIKO",
+        "url": SITE + "/",
+        "logo": f"{SITE}/assets/brand/icon-512.png",
+        "sameAs": ["https://www.instagram.com/norikofoods/"],
+        "parentOrganization": {"@type": "Organization", "name": "Ashokasha Exim Pvt. Ltd."},
+        "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+91-89282-27122",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": ["en", "hi"],
+        }],
+        "address": {"@type": "PostalAddress", "addressLocality": "Thane West", "addressRegion": "Maharashtra", "postalCode": "400604", "addressCountry": "IN"},
+    }
+
+
+def iso_minutes(n):
+    return f"PT{n}M"
+
+
+def recipe_ld(text, rel):
+    strip = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
+    name = strip(re.search(r"<h1>(.*?)</h1>", text, re.S).group(1))
+    lede = strip(re.search(r'<p class="lede">(.*?)</p>', text, re.S).group(1))
+    diet = re.search(r'<p class="eyebrow">Recipe · (\w+)</p>', text)
+    summary = re.search(r'<div class="recipe-summary">(.*?)</div>', text, re.S).group(1)
+    ingredients = [strip(i) for i in re.findall(r"<li>(.*?)</li>", re.search(r'<ul class="recipe-ingredients">(.*?)</ul>', text, re.S).group(1), re.S)]
+    method = re.search(r'<div class="recipe-method" id="method">(.*?)(?:<div class="recipe-note">|<div class="recipe-products">|$)', text, re.S).group(1)
+    steps = []
+    for li in re.findall(r"<li>(.*?)</li>", method, re.S):
+        m = re.match(r"\s*<strong>(.*?)</strong>\s*(.*)", li, re.S)
+        steps.append({"@type": "HowToStep", "name": strip(m.group(1)), "text": strip(m.group(2))} if m else {"@type": "HowToStep", "text": strip(li)})
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": name,
+        "description": lede,
+        "image": pick_image(text, rel),
+        "author": {"@type": "Organization", "name": "NORIKO"},
+        "publisher": {"@type": "Organization", "name": "NORIKO"},
+        "recipeCuisine": "Asian",
+        "recipeIngredient": ingredients,
+        "recipeInstructions": steps,
+        "mainEntityOfPage": page_url(rel),
+    }
+    if diet:
+        data["suitableForDiet"] = "https://schema.org/VeganDiet" if diet.group(1) == "Vegan" else "https://schema.org/VegetarianDiet"
+    prep = re.search(r"Prep (\d+) min", summary)
+    cook = re.search(r"Cook (\d+) min", summary)
+    if prep:
+        data["prepTime"] = iso_minutes(int(prep.group(1)))
+    if cook:
+        data["cookTime"] = iso_minutes(int(cook.group(1)))
+    if prep and cook:
+        data["totalTime"] = iso_minutes(int(prep.group(1)) + int(cook.group(1)))
+    serves = re.search(r"(?:Serves|Makes) (\d+)", summary)
+    if serves:
+        data["recipeYield"] = serves.group(0).split(" ", 1)[1]
+    return data
+
+
+def seo_data_block(text, rel):
+    if rel == "index.html":
+        data = organization_ld()
+    elif rel.startswith("recipes/"):
+        data = recipe_ld(text, rel)
+    else:
+        return ""
+    return f"{LD_START}\n{ld_script(data)}\n{LD_END}\n"
+
+
 def analytics_block(rel):
     lines = [GA_START]
     if rel == "index.html":
@@ -130,11 +214,12 @@ def main():
             path.write_text(text, encoding="utf-8")
             continue
         text = BLOCK_RE.sub("", text)
+        text = LD_RE.sub("", text)
         text = fix_ld_image(text, rel)
         block = tags_for(text, rel)
         m = re.search(r'<meta name="description"[^>]*>\n', text)
         anchor = m.end() if m else text.index("</title>") + len("</title>\n")
-        text = text[:anchor] + block + text[anchor:]
+        text = text[:anchor] + block + seo_data_block(text, rel) + text[anchor:]
         path.write_text(text, encoding="utf-8")
         urls.append(page_url(rel))
         print(rel)
