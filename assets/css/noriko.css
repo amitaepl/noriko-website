@@ -622,6 +622,9 @@ p { margin: 0 0 var(--space-4); max-width: 64ch; }
 }
 .cook-feature:hover .dish, .cook-feature:focus-within .dish { opacity: 1; }
 .cook-feature:hover .pack, .cook-feature:focus-within .pack { opacity: 0; }
+.cook-feature.is-dish .dish { opacity: 1; }
+.cook-feature.is-dish .pack { opacity: 0; }
+.cook-feature__media { cursor: pointer; }
 .cook-feature h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
 
 /* --- Full-bleed editorial band --- */
@@ -1268,6 +1271,14 @@ p { margin: 0 0 var(--space-4); max-width: 64ch; }
 .contact-form textarea { resize:vertical; min-height:140px; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline:3px solid rgba(234,29,38,.18); border-color:var(--noriko-red); }
 .contact-form__wide { grid-column:1 / -1; }
+.contact-form__choices { border:0; margin:0; padding:0; min-width:0; display:flex; flex-direction:column; gap:8px; }
+.contact-form__choices legend { padding:0; margin-bottom:8px; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.contact-form__choices legend small { color:var(--ink-mute); font-size:.72rem; font-weight:400; letter-spacing:0; text-transform:none; }
+.contact-form__checks { display:flex; flex-wrap:wrap; gap:10px; }
+.contact-form .contact-form__checks label { flex-direction:row; align-items:center; gap:10px; padding:10px 16px; border:1px solid var(--line-strong); border-radius:10px; background:var(--paper); cursor:pointer; font-weight:600; }
+.contact-form .contact-form__checks input { width:18px; height:18px; padding:0; margin:0; accent-color:var(--noriko-red); }
+.contact-form .contact-form__checks label:has(input:checked) { border-color:var(--noriko-red); }
+.contact-form__error { color:var(--noriko-red); font-size:.8rem; font-weight:600; }
 .contact-form__status { min-height:1.5em; margin-top:var(--space-3); color:var(--ink-soft); font-size:.875rem; }
 .contact-details { padding-top:var(--space-6); border-top:1px solid rgba(255,255,255,.25); }
 .contact-details h3 { color:#fff; font-size:clamp(1.8rem,3vw,2.6rem); }
@@ -1464,6 +1475,10 @@ p { margin: 0 0 var(--space-4); max-width: 64ch; }
   .spec-row__cta { grid-area: cta; width: 100%; }
   .audience-switch a[aria-current]::after { content: none; }
   .audience-bar__aside { display: none; }
+  /* One clean line on phones: drop the label, keep both links unwrapped */
+  .audience-switch__label { display: none; }
+  .audience-switch a { padding: 0 var(--space-3); white-space: nowrap; font-size: .8125rem; }
+  .audience-switch a:first-of-type { padding-left: 0; }
 }
 
 @media (max-width: 420px) {

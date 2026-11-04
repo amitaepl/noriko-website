@@ -24,7 +24,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "39"
+CSS_V = "43"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -604,7 +604,7 @@ TAIL = """
   </div>
 </footer>
 
-<script src="../assets/js/noriko.js?v=6"></script>
+<script src="../assets/js/noriko.js?v=9"></script>
 </body>
 </html>
 """

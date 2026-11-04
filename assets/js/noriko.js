@@ -182,6 +182,13 @@
   }
   if (specRows.length) applyRows();
 
+  /* ---- Featured Cook pack: tap to swap pack and dish (touch has no hover) ---- */
+  document.querySelectorAll('.cook-feature__media').forEach(function (media) {
+    media.addEventListener('click', function () {
+      media.closest('.cook-feature').classList.toggle('is-dish');
+    });
+  });
+
   /* ---- HoReCa enquiry basket ----
      Browse → add → review → details → submit. Never displays a price. */
   var basket = [];
@@ -309,13 +316,32 @@
         messageField.value = 'I am interested in ' + requestedProduct + '. Please share availability, suitable pack formats and pricing.';
       }
     }
+    contactForm.addEventListener('change', function (e) {
+      var help = document.getElementById('interest-help');
+      if (help && e.target.name === 'interest' && contactForm.querySelector('input[name="interest"]:checked')) help.hidden = true;
+    });
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!contactForm.checkValidity()) {
         contactForm.reportValidity();
         return;
       }
+      /* "Interested in" is a set of checkboxes; at least one is required,
+         and the choices are sent to Formspree as one readable line. */
+      var interests = Array.prototype.map.call(
+        contactForm.querySelectorAll('input[name="interest"]:checked'),
+        function (box) { return box.value; }
+      );
+      var interestHelp = document.getElementById('interest-help');
+      if (interestHelp) interestHelp.hidden = interests.length > 0;
+      if (interests.length === 0) {
+        var firstBox = contactForm.querySelector('input[name="interest"]');
+        if (firstBox) firstBox.focus();
+        return;
+      }
       var data = new FormData(contactForm);
+      data.delete('interest');
+      data.append('interest', interests.join(', '));
       submitToFormspree(contactForm, data, contactStatus, 'Thank you. Your enquiry has been sent to the NORIKO India team.').then(function (sent) {
         if (sent) contactForm.reset();
       });
@@ -378,16 +404,16 @@
 
   /* ---- Connect product detail pages to recipes that use them ---- */
   var recipeLibrary = {
-    bamboo: ['bamboo-water-chestnut-stir-fry.html', 'Bamboo & Water Chestnut Stir-Fry', 'bamboo-shoot-stir-fry-final.png'],
-    blackFungus: ['black-fungus-cucumber-salad.html', 'Black Fungus Cucumber Salad', 'black-fungus-salad-final.png'],
-    crispyRice: ['crispy-sushi-rice-bites.html', 'Crispy Sushi Rice Bites', 'crispy-sushi-rice-bites-final.png'],
-    paneer: ['gochujang-honey-paneer.html', 'Gochujang Honey Paneer', 'gochujang-honey-paneer-final.png'],
-    ramen: ['gochujang-ramen.html', 'Gochujang Ramen', 'spicy-ramen-eggs-final.png'],
-    kimchiRice: ['kimchi-fried-rice.html', 'Kimchi Fried Rice', 'kimchi-fried-rice-final.png'],
-    mangoRice: ['mango-sticky-rice.html', 'Mango Sticky Rice', 'mango-sticky-rice-final.png'],
-    udon: ['sesame-shiitake-udon.html', 'Sesame Shiitake Udon', 'miso-butter-udon-final.png'],
-    soba: ['sesame-soba-salad.html', 'Sesame Soba Salad', 'sesame-soba-salad-final.png'],
-    shiitakeNoodles: ['shiitake-chilli-garlic-noodles.html', 'Shiitake Chilli Garlic Noodles', 'shiitake-chilli-garlic-noodles-final.png']
+    bamboo: ['bamboo-water-chestnut-stir-fry.html', 'Bamboo & Water Chestnut Stir-Fry', 'bamboo-shoot-stir-fry-final.webp'],
+    blackFungus: ['black-fungus-cucumber-salad.html', 'Black Fungus Cucumber Salad', 'black-fungus-salad-final.webp'],
+    crispyRice: ['crispy-sushi-rice-bites.html', 'Crispy Sushi Rice Bites', 'crispy-sushi-rice-bites-final.webp'],
+    paneer: ['gochujang-honey-paneer.html', 'Gochujang Honey Paneer', 'gochujang-honey-paneer-final.webp'],
+    ramen: ['gochujang-ramen.html', 'Gochujang Ramen', 'spicy-ramen-eggs-final.webp'],
+    kimchiRice: ['kimchi-fried-rice.html', 'Kimchi Fried Rice', 'kimchi-fried-rice-final.webp'],
+    mangoRice: ['mango-sticky-rice.html', 'Mango Sticky Rice', 'mango-sticky-rice-final.webp'],
+    udon: ['sesame-shiitake-udon.html', 'Sesame Shiitake Udon', 'miso-butter-udon-final.webp'],
+    soba: ['sesame-soba-salad.html', 'Sesame Soba Salad', 'sesame-soba-salad-final.webp'],
+    shiitakeNoodles: ['shiitake-chilli-garlic-noodles.html', 'Shiitake Chilli Garlic Noodles', 'shiitake-chilli-garlic-noodles-final.webp']
   };
   var productRecipeMap = {
     'canned-bamboo-shoots.html': ['bamboo'],

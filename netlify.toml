@@ -11,3 +11,15 @@
   [headers.values]
     Cache-Control = "no-store"
     X-Content-Type-Options = "nosniff"
+
+# Let browsers keep images and fonts for a week instead of re-checking on
+# every visit. CSS and JS stay revalidated: they are cache-busted with ?v=.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/brand/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
