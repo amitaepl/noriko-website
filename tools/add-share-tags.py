@@ -1,4 +1,5 @@
-"""Add canonical + Open Graph / Twitter share tags to every page, and write sitemap.xml.
+"""Add canonical + Open Graph / Twitter share tags and the Google Analytics tag
+to every page, and write sitemap.xml.
 
 Re-run after tools/build-products.py, since that regenerates products/*.html.
 Safe to run repeatedly: the block between the share-tags markers is replaced.
@@ -13,6 +14,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://noriko.in"
 DEFAULT_IMAGE = "assets/img/share/noriko-share.jpg"
+GA_ID = "G-V5WB7BP69N"  # Google Analytics 4: Ashokasha Exim account > NORIKO Website
+SEARCH_CONSOLE = "sDDxuzAg_c3Ku_eTxL3InXbO6DQ7aLdJD_qW6IhNxU0"  # homepage only
+GA_START, GA_END = "<!-- analytics -->", "<!-- /analytics -->"
+GA_RE = re.compile(re.escape(GA_START) + r".*?" + re.escape(GA_END) + r"\n?", re.S)
 START, END = "<!-- share-tags -->", "<!-- /share-tags -->"
 BLOCK_RE = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
 
@@ -91,6 +96,24 @@ def tags_for(text, rel):
     return "\n".join(lines) + "\n"
 
 
+def analytics_block(rel):
+    lines = [GA_START]
+    if rel == "index.html":
+        lines.append(f'<meta name="google-site-verification" content="{SEARCH_CONSOLE}">')
+    lines += [
+        f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>',
+        f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>",
+        GA_END,
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def add_analytics(text, rel):
+    text = GA_RE.sub("", text)
+    i = text.index("</head>")
+    return text[:i] + analytics_block(rel) + text[i:]
+
+
 def main():
     pages = sorted(
         p for p in ROOT.rglob("*.html")
@@ -100,7 +123,11 @@ def main():
     for path in pages:
         rel = path.relative_to(ROOT).as_posix()
         text = path.read_text(encoding="utf-8")
-        if "<title>" not in text or rel == "404.html":
+        if "<title>" not in text:
+            continue
+        text = add_analytics(text, rel)
+        if rel == "404.html":
+            path.write_text(text, encoding="utf-8")
             continue
         text = BLOCK_RE.sub("", text)
         text = fix_ld_image(text, rel)

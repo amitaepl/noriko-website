@@ -199,6 +199,11 @@
   var enquiryStatus = document.getElementById('enquiry-form-status');
   var addBtns = document.querySelectorAll('.spec-row__cta');
 
+  /* Google Analytics events (the gtag snippet is in each page's <head>) */
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
   function submitToFormspree(form, data, statusEl, successMessage) {
     var submitButton = form.querySelector('[type="submit"]');
     var originalLabel = submitButton ? submitButton.textContent : '';
@@ -215,6 +220,7 @@
     }).then(function (response) {
       if (!response.ok) throw new Error('Form submission failed');
       if (statusEl) statusEl.textContent = successMessage;
+      track('generate_lead', { form_id: form.id });
       return true;
     }).catch(function () {
       if (statusEl) statusEl.textContent = 'We could not send your enquiry. Please try again or email info@aepl.biz.';
@@ -473,6 +479,10 @@
   waButton.setAttribute('aria-label', 'Chat with NORIKO on WhatsApp');
   waButton.innerHTML = '<svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.3.6 4.53 1.75 6.5L3 29l6.7-1.74a13 13 0 0 0 6.32 1.62h.01C23.2 28.88 29 23.06 29 15.9 29 8.75 23.19 3 16.02 3zm0 23.7h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.97 1.03 1.06-3.86-.26-.4a10.7 10.7 0 0 1-1.65-5.75c0-5.95 4.85-10.8 10.83-10.8a10.8 10.8 0 0 1 10.8 10.82c0 5.95-4.86 10.7-10.9 10.7zm5.93-8.03c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.84 1.06-1.03 1.27-.19.22-.38.24-.71.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.67.15-.14.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.27-.63-.53-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.9.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.41.19-1.55-.08-.14-.3-.22-.62-.38z"/></svg><span>Chat on WhatsApp</span>';
   document.body.appendChild(waButton);
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href^="https://wa.me/"]');
+    if (link) track('whatsapp_click', { link_id: link.id || link.className });
+  });
 
   /* Retail "Where to buy": ask on WhatsApp with the question pre-written */
   var whereWa = document.getElementById('where-whatsapp');
