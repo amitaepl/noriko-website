@@ -57,7 +57,7 @@ PRIVACY = f"""
 <p>We may update this policy. The date above shows when it last changed.</p>
 
 <h2>Grievance officer</h2>
-<p>If you have a concern about how your information is handled, write to our Grievance Officer, Ms. Asawari Gujar, Ashokasha Exim Pvt. Ltd., Thane West 400604, Maharashtra, India, at {CONTACT}. We will acknowledge your complaint and respond within a reasonable time.</p>
+<p>If you have a concern about how your information is handled, write to our Grievance Officer, Ms. Asawari Gujar, Ashokasha Exim Pvt. Ltd., Thane West 400604, Maharashtra, India, at <a href="mailto:compliance@aepl.biz">compliance@aepl.biz</a> or <a href="tel:+918928227122">+91 89282 27122</a>. We will acknowledge your complaint and respond within a reasonable time.</p>
 
 <h2>Contact</h2>
 <p>Ashokasha Exim Pvt. Ltd., Thane West 400604, Maharashtra, India. {CONTACT}.</p>
