@@ -603,7 +603,7 @@ TAIL = """
   </div>
 </footer>
 
-<script src="../assets/js/noriko.js?v=12"></script>
+<script src="../assets/js/noriko.js?v=13"></script>
 </body>
 </html>
 """
