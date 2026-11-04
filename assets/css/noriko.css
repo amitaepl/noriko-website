@@ -1271,6 +1271,25 @@ p { margin: 0 0 var(--space-4); max-width: 64ch; }
 .contact-form textarea { resize:vertical; min-height:140px; }
 .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline:3px solid rgba(234,29,38,.18); border-color:var(--noriko-red); }
 .contact-form__wide { grid-column:1 / -1; }
+
+/* Floating WhatsApp chat — WhatsApp's own green so it reads instantly */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 150;
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 0 20px 0 16px; border-radius: 999px;
+  background: #25D366; color: #fff; font-weight: 700; font-size: .95rem;
+  text-decoration: none; box-shadow: var(--shadow-lift);
+  transition: transform 180ms var(--ease), background 180ms var(--ease);
+}
+.wa-float:hover { background: #1EBE5A; transform: translateY(-2px); }
+.wa-float:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+body.nav-open .wa-float { display: none; }
+@media (max-width: 760px) {
+  /* icon-only on phones so it never covers content */
+  .wa-float { right: 16px; bottom: 16px; width: 56px; height: 56px; padding: 0; justify-content: center; }
+  .wa-float span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+@media print { .wa-float { display: none; } }
 .contact-form__choices { border:0; margin:0; padding:0; min-width:0; display:flex; flex-direction:column; gap:8px; }
 .contact-form__choices legend { padding:0; margin-bottom:8px; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 .contact-form__choices legend small { color:var(--ink-mute); font-size:.72rem; font-weight:400; letter-spacing:0; text-transform:none; }
