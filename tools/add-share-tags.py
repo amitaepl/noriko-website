@@ -170,7 +170,21 @@ def recipe_ld(text, rel):
     return data
 
 
+def faq_ld(text):
+    qa = re.findall(r'<summary>(.*?)</summary><p>(.*?)</p>', text, re.S)
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": html.unescape(q), "acceptedAnswer": {"@type": "Answer", "text": html.unescape(a)}}
+            for q, a in qa
+        ],
+    }
+
+
 def seo_data_block(text, rel):
+    if rel == "horeca.html":
+        return f"{LD_START}\n{ld_script(faq_ld(text))}\n{LD_END}\n"
     if rel == "index.html":
         data = organization_ld()
     elif rel.startswith("recipes/"):

@@ -24,7 +24,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "43"
+CSS_V = "47"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -145,9 +145,6 @@ def head(p):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/brand/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/brand/icon-512.png">
@@ -301,6 +298,7 @@ def hero(p):
         </div>{price}
         <div class="pdp__actions">
           {cta}
+          <a class="btn btn--ghost" id="pdp-whatsapp" href="{wa}" target="_blank" rel="noopener">Ask about this product on WhatsApp</a>
         </div>
       </div>
     </div>
@@ -308,6 +306,7 @@ def hero(p):
 """.format(band=band, img=p["img"], alt=p["alt"], w=p["w"], h=p["h"], dish=dish,
            world_href=(a["world_href"] + w["hash"]) if aud == "retail" else a["world_href"],
            wlabel=w["label"], audlabel=a["label"], cta=cta_for(p),
+           wa="https://wa.me/918928227122?text=" + urllib.parse.quote("Hi NORIKO, I'm interested in " + plain(p["name"]) + "."),
            name=p["name"], use=use, chips=chips(p), price=price,
            brandbadge=brandbadge)
 
