@@ -24,7 +24,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "47"
+CSS_V = "48"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -597,8 +597,8 @@ TAIL = """
       </div>
     </div>
     <div class="footer__base">
-      <span>NORIKO India · Thane West 400604 · MH (INDIA)</span>
-      <span>Helpline <a href="tel:+918928227122" class="num">89282 27122</a> · <a href="mailto:info@aepl.biz">info@aepl.biz</a> · <a href="https://www.instagram.com/norikofoods/" target="_blank" rel="noopener">Instagram @norikofoods</a></span>
+      <span>NORIKO India · Thane West 400604 · MH (INDIA) · FSSAI Lic. No. 10021011000329</span>
+      <span>Helpline <a href="tel:+918928227122" class="num">89282 27122</a> · <a href="mailto:info@aepl.biz">info@aepl.biz</a> · <a href="https://www.instagram.com/norikofoods/" target="_blank" rel="noopener">Instagram @norikofoods</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></span>
     </div>
   </div>
 </footer>

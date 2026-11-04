@@ -1897,3 +1897,8 @@ body.nav-open .wa-float { display: none; }
 
 /* Comfortable tap targets for small text links */
 .crumbs a,.eyebrow a,.product-card h3 a{display:inline-block;padding:10px 0}
+
+/* Privacy / Terms pages */
+.legal__body{max-width:760px}.legal h1{margin-bottom:8px}.legal__meta{color:var(--muted);font-size:.9rem;margin:0 0 var(--space-5)}
+.legal h2{font-size:1.25rem;margin:var(--space-6) 0 8px}.legal p,.legal li{color:var(--ink);line-height:1.65}.legal ul{padding-left:1.2em;margin:8px 0}
+.legal a{text-decoration:underline}
