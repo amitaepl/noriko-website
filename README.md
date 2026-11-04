@@ -41,6 +41,8 @@ tools/import-dish-images.py Converts supplied imagery to web-ready WebP (needs P
 tools/check-links.py        Verifies every local href and asset resolves.
 tools/add-share-tags.py     Adds canonical + share-preview tags and writes sitemap.xml.
                             Re-run after build-products.py.
+tools/make-thumbs.py       Makes small copies of dish, recipe, pack and poster images (needs Pillow).
+tools/use-thumbs.py         Points card images at those copies. Run it LAST, after every generator.
 tools/build-legal.py        Builds privacy.html and terms.html (text lives in the script).
                             The HoReCa product list + enquiry basket is edited in horeca.html.
 assets/img/dishes/          Dish imagery — drop <slug>.webp in, see its README
