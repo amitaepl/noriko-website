@@ -133,7 +133,7 @@ def recipe_ld(text, rel):
     strip = lambda s: html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
     name = strip(re.search(r"<h1>(.*?)</h1>", text, re.S).group(1))
     lede = strip(re.search(r'<p class="lede">(.*?)</p>', text, re.S).group(1))
-    diet = re.search(r'<p class="eyebrow">Recipe · (\w+)</p>', text)
+    diet = re.search(r'<p class="eyebrow">Recipe · (Vegan|Vegetarian)</p>', text)
     summary = re.search(r'<div class="recipe-summary">(.*?)</div>', text, re.S).group(1)
     ingredients = [strip(i) for i in re.findall(r"<li>(.*?)</li>", re.search(r'<ul class="recipe-ingredients">(.*?)</ul>', text, re.S).group(1), re.S)]
     method = re.search(r'<div class="recipe-method" id="method">(.*?)(?:<div class="recipe-note">|<div class="recipe-products">|$)', text, re.S).group(1)
