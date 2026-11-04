@@ -24,7 +24,7 @@ from imgsize import img_size
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "assets/data/products.json").read_text(encoding="utf-8"))
 PRODUCTS = DATA["products"]
-CSS_V = "48"
+CSS_V = "50"
 
 DISH_DIR = ROOT / "assets/img/dishes"
 DISH_EXT = (".webp", ".jpg", ".jpeg", ".png")
@@ -296,7 +296,7 @@ def hero(p):
         <div class="pdp__chips">
           {chips}
         </div>{price}
-        <div class="pdp__actions">
+        <div class="pdp__actions" id="pdp-actions">
           {cta}
           <a class="btn btn--ghost" id="pdp-whatsapp" href="{wa}" target="_blank" rel="noopener">Ask about this product on WhatsApp</a>
         </div>
@@ -603,7 +603,7 @@ TAIL = """
   </div>
 </footer>
 
-<script src="../assets/js/noriko.js?v=9"></script>
+<script src="../assets/js/noriko.js?v=12"></script>
 </body>
 </html>
 """

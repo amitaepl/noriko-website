@@ -1902,3 +1902,30 @@ body.nav-open .wa-float { display: none; }
 .legal__body{max-width:760px}.legal h1{margin-bottom:8px}.legal__meta{color:var(--muted);font-size:.9rem;margin:0 0 var(--space-5)}
 .legal h2{font-size:1.25rem;margin:var(--space-6) 0 8px}.legal p,.legal li{color:var(--ink);line-height:1.65}.legal ul{padding-left:1.2em;margin:8px 0}
 .legal a{text-decoration:underline}
+
+/* Trust strip under the homepage hero */
+.trust-strip{background:#f0f3f2;border-bottom:1px solid var(--line)}
+.trust-strip ul{list-style:none;margin:0;padding:14px 0;display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:center;font-size:.875rem;color:var(--ink)}
+.trust-strip li{position:relative}
+.trust-strip li+li::before{content:"";position:absolute;left:-15px;top:50%;width:4px;height:4px;margin-top:-2px;border-radius:50%;background:var(--noriko-red)}
+.trust-strip a{color:inherit;text-decoration:underline}
+@media(max-width:760px){.trust-strip ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;padding:14px 0;font-size:.8125rem;justify-content:stretch}.trust-strip li+li::before{display:none}}
+
+/* Homepage teasers */
+.horeca__teaser{align-self:center;padding:var(--space-7);border:1px solid rgba(255,255,255,.2);border-radius:20px;background:rgba(255,255,255,.06)}
+.horeca__teaser h3{font-size:clamp(1.5rem,2.4vw,2rem);margin:8px 0 12px}
+.horeca__teaser p{color:rgba(255,255,255,.8);margin:0 0 20px}
+.horeca__teaser .link-arrow{display:inline-flex;margin-left:16px}
+.inspo-more{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:var(--space-7)}
+
+/* Product pages on phones: sticky action bar */
+.pdp-sticky{display:none}
+@media(max-width:760px){
+  .pdp-sticky{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:140;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08);transform:translateY(110%);transition:transform 200ms var(--ease)}
+  .pdp-sticky.is-on{transform:none}
+  .pdp-sticky .btn{min-height:48px;justify-content:center}
+  .pdp-sticky .btn--primary{flex:1 1 auto}
+  .pdp-sticky__wa{flex:0 0 auto}
+  body.has-pdp-sticky .wa-float{display:none}
+  body.has-pdp-sticky{padding-bottom:72px}
+}

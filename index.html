@@ -24,7 +24,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/icon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon-180.png">
-<link rel="stylesheet" href="assets/css/noriko.css?v=48">
+<link rel="stylesheet" href="assets/css/noriko.css?v=50">
 <!-- analytics -->
 <meta name="google-site-verification" content="sDDxuzAg_c3Ku_eTxL3InXbO6DQ7aLdJD_qW6IhNxU0">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5WB7BP69N"></script>
@@ -132,6 +132,17 @@
         </a>
     </div>
   </section>
+
+  <div class="trust-strip" aria-label="About NORIKO">
+    <div class="container">
+      <ul>
+        <li>Imported &amp; distributed by Ashokasha Exim Pvt. Ltd.</li>
+        <li>FSSAI Lic. No. <span class="num">10021011000329</span></li>
+        <li>Serving India since 2022</li>
+        <li>Helpline <a href="tel:+918928227122" class="num">89282 27122</a></li>
+      </ul>
+    </div>
+  </div>
 
   <!-- ============================================================
        2. Two doors — Retail / HoReCa
@@ -657,267 +668,12 @@
           </form>
         </div>
 
-        <div>
-          <!-- horeca-list: copied into horeca.html by tools/sync-horeca-list.py -->
-          <!-- Category filter. Sized and wired for the full catalogue; the seven
-               rows below are a sample, so most categories currently return none. -->
-          <h3 class="sr-only" id="filter-h">Filter by category</h3>
-          <div class="filters" role="group" aria-labelledby="filter-h">
-            <button type="button" data-cat="all" aria-pressed="true">All</button>
-            <button type="button" data-cat="sushi">Sushi &amp; Nori</button>
-            <button type="button" data-cat="mushrooms">Mushrooms &amp; Vegetables</button>
-            <button type="button" data-cat="sauces">Sauces &amp; Pastes</button>
-            <button type="button" data-cat="oils">Oils &amp; Vinegars</button>
-            <button type="button" data-cat="rice">Rice &amp; Noodles</button>
-            <button type="button" data-cat="flours">Flours &amp; Coatings</button>
-          </div>
-
-          <div class="spec-table">
-            <div class="spec-table__head" aria-hidden="true">
-              <span></span><span>Product</span><span>Pack size</span><span>Enquiry</span>
-            </div>
-            <p class="spec-table__none" id="spec-none" hidden>No products in this category yet.</p>
-
-            <div class="spec-row" data-cat="mushrooms">
-              <img src="assets/img/packshots/shiitake.webp" alt="" aria-hidden="true" width="619" height="900" loading="lazy">
-              <span class="spec-row__name">Dried Shiitake Mushroom<span>1 kg × 10 bags/case</span></span>
-              <span class="spec-row__size num">1 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Dried Shiitake Mushroom — 1 kg" data-size="1 kg × 10 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="mushrooms">
-              <img src="assets/img/packshots/black-fungus.webp" alt="" aria-hidden="true" width="602" height="900" loading="lazy">
-              <span class="spec-row__name">Dried Black Fungus<span>1 kg × 10 bags/case</span></span>
-              <span class="spec-row__size num">1 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Dried Black Fungus — 1 kg" data-size="1 kg × 10 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="mushrooms">
-              <img src="assets/img/packshots/white-fungus.webp" alt="" aria-hidden="true" width="599" height="900" loading="lazy">
-              <span class="spec-row__name">White Fungus<span>500 g</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="White Fungus — 500 g" data-size="500 g">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="mushrooms">
-              <img src="assets/img/packshots/porcini.webp" alt="" aria-hidden="true" width="600" height="900" loading="lazy">
-              <span class="spec-row__name">Dried Porcini Mushroom<span>500 g × 20 pcs/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Dried Porcini Mushroom — 500 g" data-size="500 g × 20 pcs/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="mushrooms">
-              <img src="assets/img/packshots/bamboo-shoots.webp" alt="" aria-hidden="true" width="583" height="900" loading="lazy">
-              <span class="spec-row__name">Canned Bamboo Shoots Halves<span>560 g × 24 units/case</span></span>
-              <span class="spec-row__size num">560 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Canned Bamboo Shoots Halves — 560 g" data-size="560 g × 24 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="mushrooms">
-              <img src="assets/img/packshots/water-chestnuts.webp" alt="" aria-hidden="true" width="606" height="900" loading="lazy">
-              <span class="spec-row__name">Canned Water Chestnuts<span>567 g × 24 units/case</span></span>
-              <span class="spec-row__size num">567 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Canned Water Chestnuts — 567 g" data-size="567 g × 24 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/sushi-rice.webp" alt="" aria-hidden="true" width="542" height="900" loading="lazy">
-              <span class="spec-row__name">Sushi Rice<span>1 kg × 12 bags/case</span></span>
-              <span class="spec-row__size num">1 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Sushi Rice — 1 kg" data-size="1 kg × 12 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/glutinous-rice.webp" alt="" aria-hidden="true" width="581" height="900" loading="lazy">
-              <span class="spec-row__name">Glutinous Rice<span>1 kg × 12 bags/case</span></span>
-              <span class="spec-row__size num">1 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Glutinous Rice — 1 kg" data-size="1 kg × 12 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/ramen.webp" alt="" aria-hidden="true" width="592" height="900" loading="lazy">
-              <span class="spec-row__name">Ramen Noodles<span class="spec-row__brand">Green Label</span><span>300 g × 40 units/case</span></span>
-              <span class="spec-row__size num">300 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Ramen Noodles — 300 g" data-size="300 g × 40 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/soba.webp" alt="" aria-hidden="true" width="434" height="900" loading="lazy">
-              <span class="spec-row__name">Soba Noodles<span class="spec-row__brand">Green Label</span><span>300 g × 40 units/case</span></span>
-              <span class="spec-row__size num">300 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Soba Noodles — 300 g" data-size="300 g × 40 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/udon.webp" alt="" aria-hidden="true" width="394" height="900" loading="lazy">
-              <span class="spec-row__name">Udon Noodles<span class="spec-row__brand">Green Label</span><span>300 g × 40 units/case</span></span>
-              <span class="spec-row__size num">300 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Udon Noodles — 300 g" data-size="300 g × 40 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/somen.webp" alt="" aria-hidden="true" width="411" height="900" loading="lazy">
-              <span class="spec-row__name">Somen Noodles<span class="spec-row__brand">Green Label</span><span>300 g × 40 units/case</span></span>
-              <span class="spec-row__size num">300 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Somen Noodles — 300 g" data-size="300 g × 40 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="rice">
-              <img src="assets/img/packshots/pickled-radish.webp" alt="" aria-hidden="true" width="900" height="437" loading="lazy">
-              <span class="spec-row__name">Pickled Radish<span class="spec-row__brand">Other brand</span><span>500 g × 20 bags/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Pickled Radish — 500 g" data-size="500 g × 20 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sushi">
-              <img src="assets/img/packshots/nori-50.webp" alt="" aria-hidden="true" width="584" height="900" loading="lazy">
-              <span class="spec-row__name">Nori Sheet<span class="spec-row__brand">Gold</span><span>50 pcs × 80 bags/case</span></span>
-              <span class="spec-row__size num">50 pcs</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Nori Sheet — 50 pcs" data-size="50 pcs × 80 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sushi">
-              <img src="assets/img/packshots/nori-10.webp" alt="" aria-hidden="true" width="580" height="900" loading="lazy">
-              <span class="spec-row__name">Nori Sheet<span class="spec-row__brand">Gold</span><span>10 pcs × 100 bags/case</span></span>
-              <span class="spec-row__size num">10 pcs</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Nori Sheet — 10 pcs" data-size="10 pcs × 100 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sushi">
-              <img src="assets/img/packshots/sushi-ginger-white.webp" alt="" aria-hidden="true" width="602" height="900" loading="lazy">
-              <span class="spec-row__name">Sushi Ginger (White)<span>2 kg gross · 1.2 kg drained · 6 units/case</span></span>
-              <span class="spec-row__size num">2 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Sushi Ginger (White) — 2 kg" data-size="2 kg gross · 1.2 kg drained · 6 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sushi">
-              <img src="assets/img/packshots/sushi-ginger-pink.webp" alt="" aria-hidden="true" width="574" height="900" loading="lazy">
-              <span class="spec-row__name">Sushi Ginger (Pink)<span>2 kg gross · 1.2 kg drained · 6 units/case</span></span>
-              <span class="spec-row__size num">2 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Sushi Ginger (Pink) — 2 kg" data-size="2 kg gross · 1.2 kg drained · 6 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sushi">
-              <img src="assets/img/packshots/wasabi-paste.webp" alt="" aria-hidden="true" width="900" height="269" loading="lazy">
-              <span class="spec-row__name">Prepared Wasabi in Tube<span>43 g × 100 units/case</span></span>
-              <span class="spec-row__size num">43 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Prepared Wasabi in Tube — 43 g" data-size="43 g × 100 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sushi">
-              <img src="assets/img/packshots/wasabi-powder.webp" alt="" aria-hidden="true" width="601" height="900" loading="lazy">
-              <span class="spec-row__name">Wasabi Powder<span class="spec-row__brand">HOT</span><span>1 kg × 10 pcs/case</span></span>
-              <span class="spec-row__size num">1 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Wasabi Powder — 1 kg" data-size="1 kg × 10 pcs/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/gochujang-yellow.webp" alt="" aria-hidden="true" width="900" height="636" loading="lazy">
-              <span class="spec-row__name">Gochujang (Korean Style)<span class="spec-row__brand">SinhoFOOD</span><span>500 g × 12 units/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Gochujang (Korean Style) — 500 g" data-size="500 g × 12 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/gochujang-red.webp" alt="" aria-hidden="true" width="900" height="606" loading="lazy">
-              <span class="spec-row__name">Gochujang Hot Chili Paste (Red Cap)<span>500 g × 20 units/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Gochujang Hot Chili Paste (Red Cap) — 500 g" data-size="500 g × 20 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/gochugaru.webp" alt="" aria-hidden="true" width="598" height="900" loading="lazy">
-              <span class="spec-row__name">Gochugaru — Hot Pepper Flakes<span>500 g × 20 units/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Gochugaru — Hot Pepper Flakes — 500 g" data-size="500 g × 20 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/togarashi.webp" alt="" aria-hidden="true" width="599" height="900" loading="lazy">
-              <span class="spec-row__name">Shichimi Togarashi<span>300 g × 60 units/case</span></span>
-              <span class="spec-row__size num">300 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Shichimi Togarashi — 300 g" data-size="300 g × 60 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/kimchi-sauce.webp" alt="" aria-hidden="true" width="396" height="900" loading="lazy">
-              <span class="spec-row__name">Kimchi Sauce<span>1 L × 12 bottles/case</span></span>
-              <span class="spec-row__size num">1 L</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Kimchi Sauce — 1 L" data-size="1 L × 12 bottles/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/chili-bean-paste.webp" alt="" aria-hidden="true" width="611" height="900" loading="lazy">
-              <span class="spec-row__name">Bean Paste with Red Chilli<span class="spec-row__brand">Zhaofenghe</span><span>500 g × 24 pcs/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Bean Paste with Red Chilli — 500 g" data-size="500 g × 24 pcs/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/black-beans.webp" alt="" aria-hidden="true" width="573" height="900" loading="lazy">
-              <span class="spec-row__name">Preserved Dried Salted Black Beans<span class="spec-row__brand">Other brand</span><span>500 g × 40 units/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Preserved Dried Salted Black Beans — 500 g" data-size="500 g × 40 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/hondashi.webp" alt="" aria-hidden="true" width="565" height="900" loading="lazy">
-              <span class="spec-row__name">Hondashi Soup Stock<span class="spec-row__brand">JINJIN</span><span>500 g/bag · 2 bags/box · 10 boxes/case</span></span>
-              <span class="spec-row__size num">500 g</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Hondashi Soup Stock — 500 g" data-size="500 g/bag · 2 bags/box · 10 boxes/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="sauces">
-              <img src="assets/img/packshots/mayonnaise.webp" alt="" aria-hidden="true" width="533" height="900" loading="lazy">
-              <span class="spec-row__name">Mayonnaise<span class="spec-row__brand">SUZUKA</span><span>1 kg × 9 bags/case</span></span>
-              <span class="spec-row__size num">1 kg</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Mayonnaise — 1 kg" data-size="1 kg × 9 bags/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="oils">
-              <img src="assets/img/packshots/rice-vinegar-1-8l.webp" alt="" aria-hidden="true" width="433" height="900" loading="lazy">
-              <span class="spec-row__name">Rice Vinegar<span>1.8 L × 6 units/case</span></span>
-              <span class="spec-row__size num">1.8 L</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Rice Vinegar — 1.8 L" data-size="1.8 L × 6 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="oils">
-              <img src="assets/img/packshots/rice-vinegar-620ml.webp" alt="" aria-hidden="true" width="434" height="900" loading="lazy">
-              <span class="spec-row__name">Rice Vinegar<span>620 ml × 12 units/case</span></span>
-              <span class="spec-row__size num">620 ml</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Rice Vinegar — 620 ml" data-size="620 ml × 12 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="oils">
-              <img src="assets/img/packshots/sushi-vinegar.webp" alt="" aria-hidden="true" width="652" height="900" loading="lazy">
-              <span class="spec-row__name">Sushi Vinegar<span>1.8 L × 6 units/case</span></span>
-              <span class="spec-row__size num">1.8 L</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Sushi Vinegar — 1.8 L" data-size="1.8 L × 6 units/case">Add to enquiry</button>
-            </div>
-            <div class="spec-row" data-cat="oils">
-              <img src="assets/img/packshots/sesame-oil.webp" alt="" aria-hidden="true" width="454" height="900" loading="lazy">
-              <span class="spec-row__name">Sesame Oil<span class="spec-row__brand">Jianhua</span><span>450 ml × 20 units/case</span></span>
-              <span class="spec-row__size num">450 ml</span>
-              <button class="spec-row__cta" type="button" aria-pressed="false" data-name="Sesame Oil — 450 ml" data-size="450 ml × 20 units/case">Add to enquiry</button>
-            </div>
-          </div>
-
-          <button class="spec-more" id="spec-more" type="button" aria-expanded="false"></button>
-
-          <!-- Enquiry basket: review, then details, then submit. No prices. -->
-          <div class="enquiry">
-            <div class="enquiry__head">
-              <h3>Your enquiry</h3>
-              <span class="enquiry__count" id="enquiry-count" role="status" aria-live="polite">No items yet</span>
-            </div>
-
-            <p class="enquiry__empty" id="enquiry-empty">Add products above to build your requirement.</p>
-            <ul class="enquiry__list" id="enquiry-list" hidden></ul>
-
-            <form class="enquiry__form" id="enquiry-form" action="https://formspree.io/f/xdeoenjo" method="post">
-              <input type="hidden" name="form_type" value="HoReCa product enquiry">
-              <input type="hidden" name="_subject" value="New NORIKO HoReCa enquiry">
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" hidden>
-              <div class="enquiry__row">
-                <div class="field">
-                  <label for="eq-name">Your name</label>
-                  <input id="eq-name" name="name" type="text" autocomplete="name" required>
-                </div>
-                <div class="field">
-                  <label for="eq-company">Business name</label>
-                  <input id="eq-company" name="company" type="text" autocomplete="organization" required>
-                </div>
-              </div>
-              <div class="enquiry__row">
-                <div class="field">
-                  <label for="eq-city">City</label>
-                  <input id="eq-city" name="city" type="text" autocomplete="address-level2" required>
-                </div>
-                <div class="field">
-                  <label for="eq-phone">Phone</label>
-                  <input id="eq-phone" name="phone" type="tel" autocomplete="tel" required>
-                </div>
-              </div>
-              <div class="field">
-                <label for="eq-email">Email</label>
-                <input id="eq-email" name="email" type="email" autocomplete="email" required>
-              </div>
-              <button class="btn btn--primary" type="submit">Send enquiry</button>
-              <p class="enquiry__note">Our team responds with availability and pricing. Prices are not published online.</p>
-              <p class="enquiry__note" id="enquiry-form-status" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-          <!-- /horeca-list -->
+        <div class="horeca__teaser">
+          <p class="eyebrow">Product list &amp; enquiry</p>
+          <h3>Browse pack sizes and send one enquiry.</h3>
+          <p>Filter by category, add what your kitchen needs and send a single enquiry. Our team replies with availability and pricing.</p>
+          <a class="btn btn--primary" href="horeca.html#products">Explore products &amp; pack sizes</a>
+          <a class="link-arrow" href="horeca.html">More about NORIKO for HoReCa <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -948,7 +704,6 @@
             <p class="inspo-card__tag">35 minutes · Serves 4 · Veg</p>
           </div>
         </li>
-
         <li class="inspo-card reveal">
           <div class="inspo-card__media">
             <img class="recipe-photo" src="assets/img/recipes/shiitake-chilli-garlic-noodles-final.webp?v=1" alt="Chilli garlic noodles with sliced shiitake mushrooms" width="1536" height="1024" loading="lazy">
@@ -961,7 +716,6 @@
             <p class="inspo-card__tag">40 minutes · Serves 3 · Veg</p>
           </div>
         </li>
-
         <li class="inspo-card reveal">
           <div class="inspo-card__media">
             <img class="recipe-photo" src="assets/img/recipes/crispy-sushi-rice-bites-final.webp?v=1" alt="Crispy sushi rice bites with spicy mayonnaise and nori" width="1536" height="1024" loading="lazy">
@@ -974,35 +728,13 @@
             <p class="inspo-card__tag">50 minutes · Makes 12 · Veg</p>
           </div>
         </li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/kimchi-fried-rice-final.webp?v=1" alt="Kimchi fried rice with a fried egg" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/kimchi-fried-rice.html">Kimchi Fried Rice</a></h3><p>A punchy, comforting rice bowl crowned with a crisp-edged fried egg.</p><p class="inspo-card__tag">25 minutes · Serves 2 · Veg</p></div></li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/miso-butter-udon-final.webp?v=1" alt="Sesame shiitake udon noodles" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/sesame-shiitake-udon.html">Sesame Shiitake Udon</a></h3><p>Chewy udon, savoury mushrooms and greens in a glossy sesame sauce.</p><p class="inspo-card__tag">30 minutes · Serves 2 · Veg</p></div></li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/sesame-soba-salad-final.webp?v=1" alt="Chilled sesame soba noodle salad" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/sesame-soba-salad.html">Sesame Soba Salad</a></h3><p>A cool, crisp noodle salad with vegetables and a bright sesame dressing.</p><p class="inspo-card__tag">25 minutes · Serves 3 · Veg</p></div></li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/spicy-ramen-eggs-final.webp?v=1" alt="Spicy ramen with egg and greens" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/gochujang-ramen.html">Gochujang Ramen</a></h3><p>A warming, deeply savoury noodle bowl with egg, greens and nori.</p><p class="inspo-card__tag">30 minutes · Serves 2 · Veg</p></div></li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/bamboo-shoot-stir-fry-final.webp?v=1" alt="Bamboo shoot and water chestnut stir-fry" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/bamboo-water-chestnut-stir-fry.html">Bamboo &amp; Water Chestnut Stir-Fry</a></h3><p>Crunchy vegetables flash-fried in a light ginger and sesame glaze.</p><p class="inspo-card__tag">25 minutes · Serves 3 · Veg</p></div></li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/black-fungus-salad-final.webp?v=1" alt="Chilled black fungus and cucumber salad" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/black-fungus-cucumber-salad.html">Black Fungus Cucumber Salad</a></h3><p>A refreshing, crunchy salad with chilli, coriander and tangy dressing.</p><p class="inspo-card__tag">35 minutes · Serves 4 · Vegan</p></div></li>
-        <li class="inspo-card reveal"><div class="inspo-card__media"><img class="recipe-photo" src="assets/img/recipes/mango-sticky-rice-final.webp?v=1" alt="Mango sticky rice with coconut" loading="lazy"></div><div class="inspo-card__body"><h3><a href="recipes/mango-sticky-rice.html">Mango Sticky Rice</a></h3><p>Coconut-scented sticky rice with ripe mango and a delicate sesame finish.</p><p class="inspo-card__tag">50 minutes · Serves 4 · Vegan</p></div></li>
       </ul>
 
-      <div class="recipe-invite reveal" id="suggest-a-recipe">
-        <div class="recipe-invite__copy">
-          <p class="eyebrow">The NORIKO recipe collection is growing</p>
-          <h3>More recipes are cooking.</h3>
-          <p>Have a dish you would like us to create—or a NORIKO product you want fresh ideas for? Send us your suggestion. It may inspire one of our next recipes.</p>
-          <div class="recipe-invite__count"><strong>10</strong><span>recipes now<br>more coming soon</span></div>
-        </div>
-        <form class="recipe-invite__form" id="recipe-suggestion-form" action="https://formspree.io/f/xdeoenjo" method="post">
-          <input type="hidden" name="subject" value="New recipe suggestion from noriko.in">
-          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
-          <label><span>Your name</span><input type="text" name="name" autocomplete="name" required></label>
-          <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-          <label class="recipe-invite__wide"><span>NORIKO product <small>Optional</small></span><input type="text" name="product" placeholder="For example: Gochujang or Soba Noodles"></label>
-          <label class="recipe-invite__wide"><span>Your recipe idea</span><textarea name="message" rows="4" placeholder="Tell us the dish, flavour or idea you would like to see…" required></textarea></label>
-          <div class="recipe-invite__submit recipe-invite__wide">
-            <button class="btn btn--primary" type="submit">Suggest a recipe</button>
-            <p id="recipe-suggestion-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
+      <div class="inspo-more reveal">
+        <a class="btn btn--primary" href="recipes.html">See all 10 recipes</a>
+        <a class="link-arrow" href="recipes.html#suggest-a-recipe">Suggest a recipe <span aria-hidden="true">→</span></a>
       </div>
+
     </div>
   </section>
 
@@ -1124,7 +856,7 @@
   </div>
 </footer>
 
-<script src="assets/js/noriko.js?v=9"></script>
+<script src="assets/js/noriko.js?v=12"></script>
 </body>
 </html>
 

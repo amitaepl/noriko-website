@@ -215,7 +215,7 @@ def add_analytics(text, rel):
 def main():
     pages = sorted(
         p for p in ROOT.rglob("*.html")
-        if not any(part in {".git", "design-system", "tools", "private", "netlify"} for part in p.relative_to(ROOT).parts)
+        if not any(part in {".git", "design-system", "tools", "private", "netlify", "drafts"} for part in p.relative_to(ROOT).parts)
     )
     urls = []
     for path in pages:

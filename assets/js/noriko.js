@@ -484,6 +484,35 @@
     if (link) track('whatsapp_click', { link_id: link.id || link.className });
   });
 
+
+  /* ---- Product pages, phones: a sticky bar with the main action once the
+     buttons at the top have scrolled out of view ---- */
+  var pdpActions = document.getElementById('pdp-actions');
+  if (pdpActions && 'IntersectionObserver' in window) {
+    var mainBtn = pdpActions.querySelector('.btn--primary');
+    var waBtn = document.getElementById('pdp-whatsapp');
+    if (mainBtn) {
+      var bar = document.createElement('div');
+      bar.className = 'pdp-sticky';
+      var main2 = mainBtn.cloneNode(true);
+      bar.appendChild(main2);
+      if (waBtn) {
+        var wa2 = waBtn.cloneNode(true);
+        wa2.removeAttribute('id');
+        wa2.className = 'btn btn--ghost pdp-sticky__wa';
+        wa2.textContent = 'WhatsApp';
+        bar.appendChild(wa2);
+      }
+      document.body.appendChild(bar);
+      new IntersectionObserver(function (entries) {
+        /* Only once the buttons have scrolled up out of view, not while they are still below the fold */
+        var passed = !entries[0].isIntersecting && entries[0].boundingClientRect.bottom < 120;
+        bar.classList.toggle('is-on', passed);
+        document.body.classList.toggle('has-pdp-sticky', passed);
+      }, { rootMargin: '-90px 0px 0px 0px' }).observe(pdpActions);
+    }
+  }
+
   /* Retail "Where to buy": ask on WhatsApp with the question pre-written */
   var whereWa = document.getElementById('where-whatsapp');
   if (whereWa) whereWa.href = whatsappLink('Hi NORIKO, where can I buy your products near me? My city is: ');
