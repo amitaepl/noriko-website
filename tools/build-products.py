@@ -471,6 +471,7 @@ def related(p):
         if qd:
             # Real photography: the card's pack→dish crossfade, the signature
             # interaction. Focus reveals it too, so it is not hover-only.
+            qd = dict(qd, src=qd["src"].replace("assets/img/dishes/", "assets/img/dishes/thumbs/"))
             dish = ('\n            <img class="dish" src="../{src}" alt="{alt}" '
                     'width="{w}" height="{h}" loading="lazy"{style}>').format(**qd)
         elif q["world"] == "snack":
@@ -603,7 +604,7 @@ TAIL = """
   </div>
 </footer>
 
-<script src="../assets/js/noriko.js?v=14"></script>
+<script src="../assets/js/noriko.js?v=15"></script>
 </body>
 </html>
 """

@@ -77,6 +77,7 @@ def layer_for(slug, indent):
     """The markup the card should carry, given what is on disk."""
     d = dish_for(slug)
     if d:
+        d = dict(d, src=d["src"].replace("assets/img/dishes/", "assets/img/dishes/thumbs/"))
         return ('\n{i}<img class="dish" src="{src}" alt="{alt}" '
                 'width="{w}" height="{h}" loading="lazy"{style}>').format(i=indent, **d)
     p = BY_SLUG.get(slug)

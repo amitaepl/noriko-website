@@ -464,7 +464,7 @@
     recipeBlock.setAttribute('aria-label', 'Recipes using this product');
     recipeBlock.innerHTML = '<p class="eyebrow">Cook with this product</p><div class="pdp-recipes__list">' + linkedRecipeKeys.map(function (key) {
       var recipe = recipeLibrary[key];
-      return '<a class="pdp-recipe-link" href="../recipes/' + recipe[0] + '"><img src="../assets/img/recipes/' + recipe[2] + '" alt="" width="160" height="100" loading="lazy"><span><strong>' + recipe[1] + '</strong><small>View recipe <b aria-hidden="true">→</b></small></span></a>';
+      return '<a class="pdp-recipe-link" href="../recipes/' + recipe[0] + '"><img src="../assets/img/recipes/thumbs/' + recipe[2] + '" alt="" width="160" height="100" loading="lazy"><span><strong>' + recipe[1] + '</strong><small>View recipe <b aria-hidden="true">→</b></small></span></a>';
     }).join('') + '</div>';
     var enquiryActions = productInfo.querySelector('.pdp__actions');
     if (enquiryActions) enquiryActions.insertAdjacentElement('afterend', recipeBlock);
