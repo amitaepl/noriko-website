@@ -423,9 +423,12 @@
     somen: ['cold-somen-sesame-dipping-sauce.html', 'Cold Somen with Sesame Dipping Sauce', 'cold-somen-sesame-dipping-sauce-final.webp'],
     sushiBowl: ['sushi-rice-bowl-pickled-radish.html', 'Sushi Rice Bowl with Pickled Radish & Ginger', 'sushi-rice-bowl-pickled-radish-final.webp'],
     tempura: ['tempura-vegetables-wasabi-mayo.html', 'Tempura Vegetables with Wasabi Mayo', 'tempura-vegetables-wasabi-mayo-final.webp'],
-    aubergine: ['gochujang-glazed-aubergine.html', 'Gochujang Glazed Aubergine', 'gochujang-glazed-aubergine-final.webp']
+    aubergine: ['gochujang-glazed-aubergine.html', 'Gochujang Glazed Aubergine', 'gochujang-glazed-aubergine-final.webp'],
+    soup: ['hot-sour-mushroom-white-fungus-soup.html', 'Hot & Sour Mushroom and White Fungus Soup', 'hot-sour-mushroom-white-fungus-soup-final.webp']
   };
   var productRecipeMap = {
+    'white-fungus.html': ['soup'],
+    'noriko-chinkiang-vinegar.html': ['soup'],
     'somen-noodles.html': ['somen'],
     'wasabi-paste.html': ['somen', 'sushiBowl', 'tempura'],
     'pickled-radish.html': ['sushiBowl'],
@@ -444,13 +447,13 @@
     'nori-sheet-50.html': ['crispyRice', 'ramen', 'kimchiRice', 'somen', 'sushiBowl'],
     'rice-vinegar.html': ['bamboo', 'blackFungus', 'crispyRice', 'paneer', 'udon', 'soba', 'shiitakeNoodles', 'somen', 'sushiBowl', 'tempura', 'aubergine'],
     'rice-vinegar-1-8l.html': ['bamboo', 'blackFungus', 'crispyRice', 'paneer', 'udon', 'soba', 'shiitakeNoodles', 'somen', 'sushiBowl', 'tempura', 'aubergine'],
-    'sesame-oil.html': ['bamboo', 'blackFungus', 'paneer', 'ramen', 'kimchiRice', 'udon', 'soba', 'shiitakeNoodles', 'somen', 'aubergine'],
+    'sesame-oil.html': ['bamboo', 'blackFungus', 'paneer', 'ramen', 'kimchiRice', 'udon', 'soba', 'shiitakeNoodles', 'somen', 'aubergine', 'soup'],
     'ramen-noodles.html': ['ramen'],
     'kimchi-sauce.html': ['kimchiRice'],
     'glutinous-rice.html': ['mangoRice'],
     'udon-noodles.html': ['udon'],
     'soba-noodles.html': ['soba'],
-    'dried-shiitake-mushroom.html': ['udon', 'shiitakeNoodles']
+    'dried-shiitake-mushroom.html': ['udon', 'shiitakeNoodles', 'soup']
   };
   var productPageName = window.location.pathname.split('/').pop();
   var linkedRecipeKeys = productRecipeMap[productPageName];
