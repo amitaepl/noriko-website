@@ -15,6 +15,7 @@ labelled gap, never as plausible copy.
 import html
 import json
 import pathlib
+import re
 import sys
 import urllib.parse
 
@@ -137,6 +138,16 @@ def head(p):
     }
     if p.get("use"):
         ld["description"] = plain(p["use"])
+    # Google's product snippet needs a price, a review or a rating. Only a
+    # verified MRP is published, so only those products get Product markup;
+    # we never invent ratings or reviews, and trade prices are not public.
+    price = re.sub(r"[^0-9.]", "", p.get("mrp", ""))
+    if price:
+        ld["offers"] = {"@type": "Offer", "url": "https://noriko.in/products/" + p["slug"] + ".html",
+                        "priceCurrency": "INR", "price": price}
+        ld_tag = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>"
+    else:
+        ld_tag = ""
 
     return """<!DOCTYPE html>
 <html lang="en">
@@ -150,7 +161,7 @@ def head(p):
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/brand/icon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/brand/apple-touch-icon-180.png">
 <link rel="stylesheet" href="../assets/css/noriko.css?v={cssv}">
-<script type="application/ld+json">{ld}</script>
+{ld}
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -207,7 +218,7 @@ def head(p):
     </ol>
   </nav>
 """.format(title=title, desc=desc, cssv=CSS_V,
-           ld=json.dumps(ld, ensure_ascii=False), arrow=ARROW,
+           ld=ld_tag, arrow=ARROW,
            aud_retail=aud_retail, aud_horeca=aud_horeca,
            crumb_href=crumb_href, crumb_label=crumb_label,
            world_href=(a["world_href"] + w["hash"]) if p.get("audience") == "retail"
