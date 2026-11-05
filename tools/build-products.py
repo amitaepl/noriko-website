@@ -317,7 +317,7 @@ def hero(p):
 """.format(band=band, img=p["img"], alt=p["alt"], w=p["w"], h=p["h"], dish=dish,
            world_href=(a["world_href"] + w["hash"]) if aud == "retail" else a["world_href"],
            wlabel=w["label"], audlabel=a["label"], cta=cta_for(p),
-           wa="https://wa.me/918928227122?text=" + urllib.parse.quote("Hi NORIKO, I'm interested in " + plain(p["name"]) + "."),
+           wa="https://wa.me/918928227122?text=" + urllib.parse.quote("NORIKO enquiry: I'm interested in " + plain(p["name"]) + "."),
            name=p["name"], use=use, chips=chips(p), price=price,
            brandbadge=brandbadge)
 
@@ -615,7 +615,7 @@ TAIL = """
   </div>
 </footer>
 
-<script src="../assets/js/noriko.js?v=15"></script>
+<script src="../assets/js/noriko.js?v=16"></script>
 </body>
 </html>
 """

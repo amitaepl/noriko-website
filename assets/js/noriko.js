@@ -479,10 +479,14 @@
     return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
   }
   var pageName = document.title.split(' — ')[0].replace(/ Recipe$/, '');
-  var waMessage = 'Hi NORIKO, ';
-  if (/\/products\//.test(location.pathname)) waMessage += "I'm interested in " + pageName + '.';
-  else if (/\/recipes\//.test(location.pathname)) waMessage += 'I saw the ' + pageName + ' recipe and have a question.';
-  else waMessage += 'I have an enquiry.';
+  /* The first words are what the helpline's NORIKO flow in AiSensy starts on
+     ("NORIKO enquiry", "NORIKO HoReCa", "NORIKO retail", "NORIKO recipe"),
+     so keep them at the very start of every message. */
+  var waMessage;
+  if (/\/products\//.test(location.pathname)) waMessage = "NORIKO enquiry: I'm interested in " + pageName + '.';
+  else if (/\/recipes\//.test(location.pathname)) waMessage = 'NORIKO recipe: I saw the ' + pageName + ' recipe and have a question.';
+  else if (/\/horeca/.test(location.pathname)) waMessage = 'NORIKO HoReCa: I have an enquiry for my business.';
+  else waMessage = 'NORIKO enquiry: I have a question.';
 
   var waButton = document.createElement('a');
   waButton.className = 'wa-float';
@@ -528,7 +532,7 @@
 
   /* Retail "Where to buy": ask on WhatsApp with the question pre-written */
   var whereWa = document.getElementById('where-whatsapp');
-  if (whereWa) whereWa.href = whatsappLink('Hi NORIKO, where can I buy your products near me? My city is: ');
+  if (whereWa) whereWa.href = whatsappLink('NORIKO retail: where can I buy your products near me? My city is: ');
 
   render();
 })();
