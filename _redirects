@@ -1,2 +1,16 @@
-/private/*  /index.html  404
+# One address per page. Netlify serves every page at both /page and /page.html;
+# Google saw two copies (Search Console, 9 Nov 2026: "Duplicate, Google chose
+# different canonical"). The canonical, the sitemap and the internal links all
+# use the .html form, so the extensionless form redirects to it (301).
+# Rules without "!" never override a real file, so /page.html itself is unaffected.
+/index.html         /                      301!
+/about              /about.html            301
+/retail             /retail.html           301
+/horeca             /horeca.html           301
+/recipes            /recipes.html          301
+/privacy            /privacy.html          301
+/terms              /terms.html            301
+/products/:slug     /products/:slug.html   301
+/recipes/:slug      /recipes/:slug.html    301
 
+/private/*  /index.html  404
