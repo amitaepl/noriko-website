@@ -2,15 +2,93 @@
 # Google saw two copies (Search Console, 9 Nov 2026: "Duplicate, Google chose
 # different canonical"). The canonical, the sitemap and the internal links all
 # use the .html form, so the extensionless form redirects to it (301).
-# Rules without "!" never override a real file, so /page.html itself is unaffected.
-/index.html         /                      301!
-/about              /about.html            301
-/retail             /retail.html           301
-/horeca             /horeca.html           301
-/recipes            /recipes.html          301
-/privacy            /privacy.html          301
-/terms              /terms.html            301
-/products/:slug     /products/:slug.html   301
-/recipes/:slug      /recipes/:slug.html    301
+# Every address is listed on its own and forced (!): Netlify already serves
+# /page as a real page, so an unforced rule would never fire, and a pattern like
+# /products/:slug would also catch /products/foo.html. Regenerate this list when
+# a page is added (tools/build-redirects.py).
+/index.html                                               /  301!
+/about                                                    /about.html  301!
+/retail                                                   /retail.html  301!
+/horeca                                                   /horeca.html  301!
+/recipes                                                  /recipes.html  301!
+/privacy                                                  /privacy.html  301!
+/terms                                                    /terms.html  301!
+/products/bean-paste-red-chilli                           /products/bean-paste-red-chilli.html  301!
+/products/big-latiao                                      /products/big-latiao.html  301!
+/products/braised-lotus-root-slice                        /products/braised-lotus-root-slice.html  301!
+/products/canned-bamboo-shoots                            /products/canned-bamboo-shoots.html  301!
+/products/canned-water-chestnuts                          /products/canned-water-chestnuts.html  301!
+/products/chtoura-coarse-brown-bulgur-900g                /products/chtoura-coarse-brown-bulgur-900g.html  301!
+/products/chtoura-coarse-white-bulgur-900g                /products/chtoura-coarse-white-bulgur-900g.html  301!
+/products/chtoura-orange-blossom-water-500ml              /products/chtoura-orange-blossom-water-500ml.html  301!
+/products/chtoura-pomegranate-molasses-500ml              /products/chtoura-pomegranate-molasses-500ml.html  301!
+/products/dried-black-fungus                              /products/dried-black-fungus.html  301!
+/products/dried-shiitake-mushroom                         /products/dried-shiitake-mushroom.html  301!
+/products/fermented-tofu-spicy                            /products/fermented-tofu-spicy.html  301!
+/products/fried-fish-mala                                 /products/fried-fish-mala.html  301!
+/products/fried-fish-pepper                               /products/fried-fish-pepper.html  301!
+/products/fried-fish-spicy                                /products/fried-fish-spicy.html  301!
+/products/fried-fish-sweet-sour                           /products/fried-fish-sweet-sour.html  301!
+/products/fried-squid-spicy                               /products/fried-squid-spicy.html  301!
+/products/glutinous-rice                                  /products/glutinous-rice.html  301!
+/products/gochugaru                                       /products/gochugaru.html  301!
+/products/gochujang-korean-style                          /products/gochujang-korean-style.html  301!
+/products/gochujang                                       /products/gochujang.html  301!
+/products/golden-prize-fish-sauce-700ml                   /products/golden-prize-fish-sauce-700ml.html  301!
+/products/golden-prize-premium-oyster-sauce-700g          /products/golden-prize-premium-oyster-sauce-700g.html  301!
+/products/healthy-boy-mushroom-vegetarian-sauce           /products/healthy-boy-mushroom-vegetarian-sauce.html  301!
+/products/healthy-boy-thin-soy-sauce-700ml                /products/healthy-boy-thin-soy-sauce-700ml.html  301!
+/products/hondashi                                        /products/hondashi.html  301!
+/products/kai-sriracha-hot-chilli-sauce-770g              /products/kai-sriracha-hot-chilli-sauce-770g.html  301!
+/products/kimchi-sauce                                    /products/kimchi-sauce.html  301!
+/products/kiss-burn                                       /products/kiss-burn.html  301!
+/products/konjac-shuang-hot-spicy                         /products/konjac-shuang-hot-spicy.html  301!
+/products/konjac-shuang-sour-spicy                        /products/konjac-shuang-sour-spicy.html  301!
+/products/kruawangthip-tempura-batter-mix-1kg             /products/kruawangthip-tempura-batter-mix-1kg.html  301!
+/products/lao-gan-ma-chilli-sauce-chicken-oil-280g        /products/lao-gan-ma-chilli-sauce-chicken-oil-280g.html  301!
+/products/lao-gan-ma-chilli-sauce-fermented-soybean-230g  /products/lao-gan-ma-chilli-sauce-fermented-soybean-230g.html  301!
+/products/lao-gan-ma-spicy-chilli-crisp-210g              /products/lao-gan-ma-spicy-chilli-crisp-210g.html  301!
+/products/mayonnaise                                      /products/mayonnaise.html  301!
+/products/mini-latiao                                     /products/mini-latiao.html  301!
+/products/nori-sheet-10                                   /products/nori-sheet-10.html  301!
+/products/nori-sheet-50                                   /products/nori-sheet-50.html  301!
+/products/noriko-chinkiang-vinegar                        /products/noriko-chinkiang-vinegar.html  301!
+/products/noriko-sushi-vinegar-500ml                      /products/noriko-sushi-vinegar-500ml.html  301!
+/products/pickled-radish                                  /products/pickled-radish.html  301!
+/products/porcini-mushroom                                /products/porcini-mushroom.html  301!
+/products/ramen-noodles                                   /products/ramen-noodles.html  301!
+/products/rice-vinegar-1-8l                               /products/rice-vinegar-1-8l.html  301!
+/products/rice-vinegar                                    /products/rice-vinegar.html  301!
+/products/roasted-tofu-block                              /products/roasted-tofu-block.html  301!
+/products/salted-black-beans                              /products/salted-black-beans.html  301!
+/products/sesame-oil                                      /products/sesame-oil.html  301!
+/products/shichimi-togarashi                              /products/shichimi-togarashi.html  301!
+/products/soba-noodles                                    /products/soba-noodles.html  301!
+/products/somen-noodles                                   /products/somen-noodles.html  301!
+/products/sushi-ginger-pink                               /products/sushi-ginger-pink.html  301!
+/products/sushi-ginger-white                              /products/sushi-ginger-white.html  301!
+/products/sushi-rice                                      /products/sushi-rice.html  301!
+/products/sushi-vinegar                                   /products/sushi-vinegar.html  301!
+/products/tofu-curd-skewer-spicy                          /products/tofu-curd-skewer-spicy.html  301!
+/products/tofu-stick-snack-spicy                          /products/tofu-stick-snack-spicy.html  301!
+/products/udon-noodles                                    /products/udon-noodles.html  301!
+/products/wasabi-paste                                    /products/wasabi-paste.html  301!
+/products/wasabi-powder                                   /products/wasabi-powder.html  301!
+/products/white-fungus                                    /products/white-fungus.html  301!
+/recipes/bamboo-water-chestnut-stir-fry                   /recipes/bamboo-water-chestnut-stir-fry.html  301!
+/recipes/black-fungus-cucumber-salad                      /recipes/black-fungus-cucumber-salad.html  301!
+/recipes/cold-somen-sesame-dipping-sauce                  /recipes/cold-somen-sesame-dipping-sauce.html  301!
+/recipes/crispy-sushi-rice-bites                          /recipes/crispy-sushi-rice-bites.html  301!
+/recipes/gochujang-glazed-aubergine                       /recipes/gochujang-glazed-aubergine.html  301!
+/recipes/gochujang-honey-paneer                           /recipes/gochujang-honey-paneer.html  301!
+/recipes/gochujang-ramen                                  /recipes/gochujang-ramen.html  301!
+/recipes/hot-sour-mushroom-white-fungus-soup              /recipes/hot-sour-mushroom-white-fungus-soup.html  301!
+/recipes/kimchi-fried-rice                                /recipes/kimchi-fried-rice.html  301!
+/recipes/mango-sticky-rice                                /recipes/mango-sticky-rice.html  301!
+/recipes/sesame-shiitake-udon                             /recipes/sesame-shiitake-udon.html  301!
+/recipes/sesame-soba-salad                                /recipes/sesame-soba-salad.html  301!
+/recipes/shiitake-chilli-garlic-noodles                   /recipes/shiitake-chilli-garlic-noodles.html  301!
+/recipes/sushi-rice-bowl-pickled-radish                   /recipes/sushi-rice-bowl-pickled-radish.html  301!
+/recipes/tempura-vegetables-wasabi-mayo                   /recipes/tempura-vegetables-wasabi-mayo.html  301!
 
 /private/*  /index.html  404
